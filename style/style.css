@@ -1,0 +1,195 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    /* border: 1px solid #000; */
+}
+/* body{
+    background-color: #960018;
+}  */
+/*NAV-BAR*/
+.fondo{
+    width: 100%;
+    position: absolute;
+}
+.nav-bar-container{
+    background-image: url(../assets/img/fondo.png);
+    background-size: cover;
+    background-position: center;
+    height: 1000px;
+}
+
+.nav-bar{
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    margin: auto;
+    height: 45px;
+}
+.li-container {
+    margin-top: 20px;
+}
+.li-container ul{
+    display: flex;
+}
+.nav-bar-li{
+    list-style: none;
+    font-size: 30px;
+    padding: 5px 10px;
+    margin: 0px 130px;
+    background-color: transparent;
+}
+a{
+    text-decoration: none;
+    color: #960018;
+    display: inline-block;
+}
+.texto-fondo-principal{
+    display: flex;
+    flex-direction: column;
+    gap: 65px;
+    width: 400px;
+    height: auto;
+    justify-content: space-between;
+    margin-left: 100px;
+    margin-top: 50px;
+}
+.screen-logo{
+    width: 350px;
+    margin: auto;
+}
+.screen-texto h1{
+    width: 600px;
+    font-size: 80px;
+    margin-bottom: 30px;
+}
+.screen-texto p{
+    width: 1200px;
+    font-size: 60px;
+}
+.screen-envios{
+    width: 800px;
+    font-size: 50px;
+}
+.screen-button{
+    display: flex;
+    gap: 150px;
+    margin: auto;
+}
+.screen-button p{
+    width: 400px;
+    font-size: 30px;
+    margin: auto;
+}
+.screen-button a {
+    padding: 10px 30px;
+    margin: auto;
+    font-size: 40px;
+    border: 1px solid red;
+    border-radius: 10px;
+    border-color: #960018;
+    background-color:transparent;
+}
+/*Cards-Patys*/
+.card-paty{
+    display: flex;
+    width: 80%;
+    margin: 50px auto;
+    gap: 15px;
+}
+.card-paty-container{
+    width: 270px;
+    height: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #FAF4E3;
+    margin: auto;
+    border: 3px solid #F4A300;
+}
+.card-paty-img-container{
+    display: flex;
+}
+.card-paty-img{
+    width: 250px;
+    margin: auto;
+}
+.paty-nombre{
+    text-align: center;
+}
+.paty-precio-suma{
+    display: flex;
+    justify-content: space-around;
+}
+.paty-suma button{
+    padding: 2px 9px;
+}
+
+/*Review-Section*/
+.review-container{
+    width: 1100px;
+    margin: 30px auto;
+    background-color: #FAF4E3;
+}
+.review-review{
+    display: flex;
+    
+}
+.review-container h2, .review-subtitulo {
+    text-align: center;
+    padding: 15px;
+}
+.review-container h2{
+    font-size: 40px;
+}
+.review{
+    width: 270px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+}
+.review-img{
+    width: 100%;
+}
+.review-usiaruio{
+    text-align: center;
+    padding:5px;
+}
+.review-paty{
+    text-align: center;
+    width: 100%;
+}
+.review-texto{
+    padding: 5px;
+    text-align: center;
+}
+/*Nosotros-Section*/
+.historia-section{
+    width: 1100px;
+    margin: 50px auto;
+    background-color: #FAF4E3;
+    padding: 30px;
+}
+.historia-section h2{
+    text-align: center;
+    padding-bottom: 15px;
+}
+.historia-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.historia-img{
+    width: 420px;
+    height: auto;
+}
+.historia-texto-container{
+    width: 600px;
+}
+.historia-texto-container p{
+    padding-left: 30px;
+}
+
