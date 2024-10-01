@@ -5,9 +5,9 @@
     font-family: sans-serif;
     /* border: 1px solid #000; */
 }
-/* body{
+body{
     background-color: #960018;
-}  */
+}
 /*NAV-BAR*/
 .fondo{
     width: 100%;
@@ -48,7 +48,7 @@ a{
 .texto-fondo-principal{
     display: flex;
     flex-direction: column;
-    gap: 65px;
+    gap: 45px;
     width: 400px;
     height: auto;
     justify-content: space-between;
