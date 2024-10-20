@@ -4,7 +4,7 @@
 
 
 // funcions
-
+//esta funcion guarda el saludo para el cliente y varia segun si solo compra un producto o si compra mas de uno
 function agradecer(){
     if(hamburguesas.length === 1){
         console.log(`Muchas gracias por confiar en nosotros, espero que disfrutes de tu pedido!`)
@@ -15,11 +15,11 @@ function agradecer(){
 }
 
 //arrays
-
+//el array vacio para guardar las compras del cliente
 let hamburguesas = []
 
 //objetos
-
+//aqui se encuentrar los productos de la tienda en modo de objetos
 let productos = [
     {
         nombre: "Simple",
@@ -51,8 +51,8 @@ console.log("Hola, soy Maria, en que puedo ayudarte? \n"+
 console.log(respuestaPrompt)
 
 // En este bucle se pregunta las veces que el cliente quiera que hamburguesas quiere,
-// luego se guardan esos datos dentro de la variables para luego devolver que hamburguesa pidio el cliente (simples, dobles o triples), 
-// ademas de guardar el numero total de hamburguesas dentrop del pedido.
+// luego se guardan esos datos dentro de un array para luego devolver que hamburguesa pidio el cliente (simples, dobles o triples), con su determinado precio, nobre y demora, 
+// ademas de guardar el numero total de hamburguesas dentrop del del array hemburguesas.
 // Si el cliente se equivoca y preciona otra opcion q no sea del 1 al 4 le notificara su error, pero este no se contara dentro de los pedidos.
 if (respuestaPrompt==1){ 
     let pedido
@@ -71,8 +71,9 @@ if (respuestaPrompt==1){
         else if (pedido > 4){
             console.log('Opcion no valida')
         }
-}while (pedido != 4)
+    }while (pedido != 4)
     console.log(`Tus hamburguesas son:`)
+    //este bucle for sirve para mostrar los nombres de las hamburguesas pedidas 
     for ( let i =0 ; i < hamburguesas.length; i++ ){
         console.log(hamburguesas[i].nombre)
         }
@@ -83,6 +84,8 @@ else if (respuestaPrompt == 2){
 
 else {
     console.log('Opncion no valida')}
+
+//Estas variables sirven para saber el total a pagar por el pedido y la cantidad de demora que tendra el pedido.
 
 let precioTotal = hamburguesas.reduce ((total,hamburguesas) => total + hamburguesas.precio, 0)
 console.log (`El precio final de la compra seria $ ${precioTotal}`)
