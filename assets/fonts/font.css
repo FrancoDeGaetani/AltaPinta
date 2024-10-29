@@ -1,0 +1,28 @@
+/*Roboto*/
+@font-face {
+    font-family: "roboto";
+    src: url(./Roboto/Roboto-Regular.ttf) format(truetype);
+    font-weight: 400;
+}
+@font-face {
+    font-family: "robot";
+    src: url(./Roboto/Roboto-Light.ttf) format(truetype);
+    font-weight: 100;
+}
+@font-face {
+    font-family: "roboto";
+    src: url(./Roboto/Roboto-Bold.ttf) format(truetype);
+    font-weight: 900;
+}
+/*Lobster*/
+@font-face {
+    font-family: "lobster";
+    src: url(./Lobster/Lobster-Regular.ttf) format(truetype);
+    font-weight: 400;
+}
+/* Bebas-neue */
+@font-face {
+    font-family: "bebas-neue";
+    src: url(./Bebas_Neue/BebasNeue-Regular.ttf) format(truetype);
+    font-weight: 400;
+}
