@@ -1,97 +1,160 @@
-// Este es un programa de pedidos para una restorante de hamburguesas
-// el programa puede gestinar pedidos distinguiendo que tipo de hamburgesas son cada una(simples, dobles, triples)
-// cuanto tiempo tardaria en prepararlas para el consumidor (8 minutos por hamburguesa) y la demora del envio (15 minutos)
 
-
-// funcions
-//esta funcion guarda el saludo para el cliente y varia segun si solo compra un producto o si compra mas de uno
-function agradecer(){
-    if(hamburguesas.length === 1){
-        console.log(`Muchas gracias por confiar en nosotros, espero que disfrutes de tu pedido!`)
-    }
-    else{
-        console.log(`Muchas gracias por confiar en nosotros, espero que disfrutes de tus pedidos!`)
-    }
-}
-
-//arrays
-//el array vacio para guardar las compras del cliente
-let hamburguesas = []
-
-//objetos
-//aqui se encuentrar los productos de la tienda en modo de objetos
 let productos = [
     {
-        nombre: "Simple",
-        precio: 6000,
-        demora: 6
+        id: 1,
+        nombre: "Bacon King Carne",
+        carne: "vacuna",
+        tipo:"doble",
+        precio:7000,
+        imgUrl:"../assets/img/hamburguesas/bacon-king-carne.png",
     },
     {
-        nombre: "Doble",
-        precio: 8000,
-        demora: 7
+        id: 2,
+        nombre: "Cheese Onion",
+        carne: "vacuna",
+        tipo:"doble",
+        precio:6000,
+        imgUrl:"../assets/img/hamburguesas/Cheese-Onion.png",
     },
     {
-        nombre: "Triple",
-        precio: 10000,
-        demora: 9
-    }
+        id: 3,
+        nombre: "Doble Jamon y Queso",
+        carne: "vacuna",
+        tipo:"doble",
+        precio:6500,
+        imgUrl:"../assets/img/hamburguesas/Doble-Jamon-y-Queso.png",
+    },
+    {
+        id: 4,
+        nombre: "Hamburguesa Clasica",
+        carne: "vacuna",
+        tipo:"simple",
+        precio:4000,
+        imgUrl:"../assets/img/hamburguesas/Hamburguesa-clásica.png",
+    },
+    {
+        id: 5,
+        nombre: "Melt Con Salsa Stacker",
+        carne: "vacuna",
+        tipo:"doble",
+        precio:6250,
+        imgUrl:"../assets/img/hamburguesas/Melt-con-Salsa-Stacker.png",
+    },
+    {
+        id: 6,
+        nombre: "Stacker Doble",
+        carne: "vacuna",
+        tipo:"doble",
+        precio:7000,
+        imgUrl:"../assets/img/hamburguesas/Stacker-Doble.png",
+    },
+    {
+        id: 7,
+        nombre: "Stacker Triple",
+        carne: "vacuna",
+        tipo:"triple",
+        precio:8500,
+        imgUrl:"../assets/img/hamburguesas/Stacker-Triple.png",
+    },
+    {
+        id: 8,
+        nombre: "Stacker Cuadruple",
+        carne: "vacuna",
+        tipo:"cuadruple",
+        precio:10000,
+        imgUrl:"../assets/img/hamburguesas/Stacker-Cuadruple.png",
+    },
+    {
+        id: 9,
+        nombre: "Whopper EXtreme",
+        carne: "vacuna",
+        tipo:"simple",
+        precio:6500,
+        imgUrl:"../assets/img/hamburguesas/Whopper-Extreme.png",
+    },
+    {
+        id: 10,
+        nombre: "Whopper Extreme Doble",
+        carne: "vacuna",
+        tipo:"doble",
+        precio:7500,
+        imgUrl:"../assets/img/hamburguesas/Whopper-Extreme-doble.png",
+    },
+    {
+        id: 11,
+        nombre: "Whopper Guacamole",
+        carne: "vacuna",
+        tipo:"doble",
+        precio:7800,
+        imgUrl:"../assets/img/hamburguesas/Whopper-Guacamole.png",
+    },
+    {
+        id: 12,
+        nombre: "Bacon King",
+        carne: "pollo",
+        tipo:"simple",
+        precio:6800,
+        imgUrl:"../assets/img/hamburguesas/Bacon-King.png",
+    },
+    {
+        id: 13,
+        nombre: "Crispy Chicken Pepino",
+        carne: "pollo",
+        tipo:"simple",
+        precio:7200,
+        imgUrl:"../assets/img/hamburguesas/Crispy-Chicken-Pepino.png",
+    },
+    {
+        id: 14,
+        nombre: "Crispy Chicken",
+        carne: "pollo",
+        tipo:"simple",
+        precio:7000,
+        imgUrl:"../assets/img/hamburguesas/Crsipy-Chicken.png",
+    },
 ]
 
-//Este prompt sirve para saber que quiere hacer el cliente
-let respuestaPrompt = parseInt(prompt("Hola, soy Maria, en que puedo ayudarte? \n"+
-    "1. Hacer un pedido \n"+
-    "2. Preguntar por un pedido"
-))
+let carrito = [];
 
-console.log("Hola, soy Maria, en que puedo ayudarte? \n"+
-    "1. Hacer un pedido \n"+
-    "2. Preguntar por un pedido"
-)
-console.log(respuestaPrompt)
 
-// En este bucle se pregunta las veces que el cliente quiera que hamburguesas quiere,
-// luego se guardan esos datos dentro de un array para luego devolver que hamburguesa pidio el cliente (simples, dobles o triples), con su determinado precio, nobre y demora, 
-// ademas de guardar el numero total de hamburguesas dentrop del del array hemburguesas.
-// Si el cliente se equivoca y preciona otra opcion q no sea del 1 al 4 le notificara su error, pero este no se contara dentro de los pedidos.
-if (respuestaPrompt==1){ 
-    let pedido
-    do{
-        pedido = parseInt(prompt('Que hamburguesas queres?\n' +'1.Simple \n' + '2.Doble \n' + '3.Triple \n'+ '4.Termina pedido'))
-        console.log('Que hamburguesas queres?\n' +'1.Simple \n' + '2.Doble \n' + '3.Triple \n'+ '4.Termina pedido')
-        if(pedido==1){
-            hamburguesas.push(productos[0]);
-        }
-        else if(pedido==2){
-            hamburguesas.push(productos[1]);
-        }
-        else if(pedido==3){
-            hamburguesas.push(productos[2]);;
-        }
-        else if (pedido > 4){
-            console.log('Opcion no valida')
-        }
-    }while (pedido != 4)
-    console.log(`Tus hamburguesas son:`)
-    //este bucle for sirve para mostrar los nombres de las hamburguesas pedidas 
-    for ( let i =0 ; i < hamburguesas.length; i++ ){
-        console.log(hamburguesas[i].nombre)
-        }
-} 
+function vistaDeProductos(){
+    const divProductos = document.getElementById ("productos-container")
+    productos.forEach(producto=>{
+        const div = document.createElement ('div');
+        div.classList.add ("producto-container");
+        div.innerHTML = 
+        `
+                        <div class="card-paty-img-container">
+                            <img src=${producto.imgUrl} alt="" class="card-paty-img">
+                        </div>
+                        <div>
+                            <p class="paty-nombre">${producto.nombre}</p>
+                        </div>
+                        <div class="paty-precio-suma">
+                            <div class="precio-paty-container">
+                                <p class="paty-precio"> $ ${producto.precio}</p>
+                            </div>
+                            <div class="paty-suma">
+                                <button onclick="agregarAlCarrito"(${producto.id})>Agregar Al Carrito</button>
+                                <button class="resto">-</button>
+                            </div>
+                        </div>
+        `
+        divProductos.appendChild(div)
+    })
+}
 
-else if (respuestaPrompt == 2){
-    console.log("Lo lamento, no tenemos pedidos registrados aun.")} 
+// funcion vistaDeProductos funcional
 
-else {
-    console.log('Opncion no valida')}
+function agregarAlCarrito (id){
+    const producto = productos.find(item => item.id === id);
+    carrito.push(producto);
+}
 
-//Estas variables sirven para saber el total a pagar por el pedido y la cantidad de demora que tendra el pedido.
 
-let precioTotal = hamburguesas.reduce ((total,hamburguesas) => total + hamburguesas.precio, 0)
-console.log (`El precio final de la compra seria $ ${precioTotal}`)
-
-let demoraTotal = hamburguesas.reduce ((demora,hamburguesas) => demora + hamburguesas.demora, 10)
-console.log (`La demora total del pedido va a ser de ${demoraTotal} minutos.`)
-
-agradecer()
-
+function carritEntero(){
+    vistaDeProductos()
+    agregarAlCarrito ()
+}
+console.log(carrito)
+carritEntero()
