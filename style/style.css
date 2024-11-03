@@ -4,7 +4,7 @@
     box-sizing: border-box;
     font-family: roboto ;
     font-weight: 400;
-    /* border: 1px solid #000; */
+    /* border: 1px solid red; */
 }
 body{
     background-color: #960018;
@@ -286,7 +286,7 @@ header{
     background-color: #960018;
     color: #FAF4E3;
     padding: 15px;
-    width: 400px;
+    width: 250px;
     font-size: 25px;
     font-family: bebas-neue;
 }
@@ -302,17 +302,93 @@ header{
     padding: 10px;
     background-color: #960018;
     font-size: 20px;
-    width: 300px;
+    width: 200px;
     /* font-weight: bold; hacela bold cuando tengo un hover*/
 }
 .lista-menu-items li a{
     font-family: bebas-neue;
     color: #FAF4E3;
 }
-.productos-container{
+
+/*PRODUCTOS-MENU SECTION*/
+
+#productos-container{
     display: grid;
-    grid-template-columns: repeat(4 , 280px);
+    grid-template-columns: repeat(3, 250px);
     grid-template-rows: auto;
+    gap: 20px;
+}
+.producto-container{
+    background-color: #FAF4E3;
+    padding: 10px;
+}
+.card-paty-img{
+    width: 100%;
+    height: 100%;
+}
+
+.card-paty-img-container{
+    width: 100%;
+    height: 210px;
+}
+
+/*PRODUCTO CARRITO SECTION*/
+
+.carrito-container{
+    background-color: #FAF4E3;
+    height: auto;
+    width: 100%;
+    padding: 15px;
+}
+
+.titulo-carrito{
+    text-align: center;
+    font-size: 30px;
+    font-family: lobster;
+}
+
+#carro{
+    margin-top: 30px;
+    font-size: 17px;
+    background-color: transparent;
+    padding: 3px;
+    margin: 20px auto;
+}
+
+.li-pedido{
+    list-style: none;
+    margin: 15px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 5px;
+    font-family: bebas-neue;
+    font-size: 20px;
+}
+
+.quitar-del-carrito{
+    width: 100%;
+    color: #960018;
+    background-color: transparent;
+    border: 1px solid #960018;
+    padding: 2px;
+}
+
+#total{
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+    font-family: lobster;
+}
+
+#limpiar-carrito{
+    width: 100%;
+    font-size: 17px;
+    color: #960018;
+    background-color: transparent;
+    border: 1px solid #960018;
+    padding: 3px;
+    margin: 20px auto;
 }
 
 /*ABOUT-US Section*/
