@@ -1,4 +1,4 @@
-
+//Hamburguesas del Local 
 let productos = [
     {
         id: 1,
@@ -114,6 +114,7 @@ let productos = [
     },
 ]
 
+//Variable en donde se van a estar guardando los pedidos
 let pedidos =  JSON.parse(localStorage.getItem('carrito')) || [];;
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -121,9 +122,10 @@ document.addEventListener('DOMContentLoaded', () => {
     renderizarCarrito(); 
 });
 
+//Funcion creada para ver las cards de las hamburguesas
 function vistaDeProductos(){
     const divProductos = document.getElementById ("productos-container");
-    productos.forEach(producto=>{
+    productos.forEach(producto=>{  //Crea las cards de cada objeto 
         const div = document.createElement ('div');
         div.classList.add ("producto-container");
         div.innerHTML = 
@@ -149,14 +151,13 @@ function vistaDeProductos(){
     
 }
 
-// funcion vistaDeProductos funcional
-
+//Funcion para agregar esas hamburguesas al carrito
 function agregarAlCarrito(id){
     const CARRITO = JSON.parse(localStorage.getItem('carrito')) || []
     const PRODUCTO = productos.find(item => item.id === id);
     const PRODUCTOENCARRITO= CARRITO.find(item => item.id === id);
 
-    if(PRODUCTOENCARRITO){
+    if(PRODUCTOENCARRITO){//Aumenta la cantidad de hamburguesas en uno 
         PRODUCTOENCARRITO.cantidad +=1;
     }else{
         CARRITO.push({...PRODUCTO, cantidad: 1}) 
@@ -167,48 +168,41 @@ function agregarAlCarrito(id){
 }
 
 
-
+//Funcion para quitar las hamburguesas del carrito
 function quitarDelCarrito(id) {
     let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
-    if (!Array.isArray(carrito)) {
+    if (!Array.isArray(carrito)) {//if creado para asegurarme de tener siempre un carrito
         carrito = [];
     }
 
     const index = carrito.findIndex(item => item.id === id);
 
-    if (index !== -1) {
+    if (index !== -1) { //quita UNA sola hamburguesa si tiene mas de dos hamburguesas iguales en el pedido 
         if (carrito[index].cantidad > 1) {
             carrito[index].cantidad -= 1;
-        } else {
+        } else { //de haver una sola hamburguesa se eliminara el pedido entero del array
             carrito.splice(index, 1);
         }
     }
-    
-
-
-    // if (index !== -1) {
-    //     carrito.splice(index, 1);
-    // } 
-
 
     localStorage.setItem('carrito', JSON.stringify(carrito));
     renderizarCarrito();
 }
 
 
-
+//Funcion creada para eliminar el carrito entero sin necesidad de eliminar uno por uno los pedidos 
 function linpiarCarrito (){
     let carrito = [];
 
     localStorage.setItem('carrito', JSON.stringify(carrito));
     renderizarCarrito();
 }
-
+//Evento creado para que funcione limpiarCarrito
 document.getElementById('limpiar-carrito').addEventListener('click', linpiarCarrito);
 
 
-
+//Funcion para renbderizar el carrito y sea visible
 function renderizarCarrito() {
     const CARRITO = JSON.parse(localStorage.getItem('carrito')) || [];
 
@@ -216,7 +210,7 @@ function renderizarCarrito() {
     carritoList.innerHTML = ''; 
     let total = 0;
 
-
+    //Lista del carrito de productos ya seleccionados
     CARRITO.forEach((producto, index) => {
         let li = document.createElement ('li')
         li.className = 'li-pedido'
@@ -228,7 +222,7 @@ function renderizarCarrito() {
         total += producto.precio * producto.cantidad
     });
 
-    document.getElementById('total').textContent = `El Total = $${total}`
+    document.getElementById('total').textContent = `El Total = $${total}`//Muestras el total a pagar del pedido
     
 }
 

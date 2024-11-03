@@ -272,10 +272,11 @@ header{
 }
 
 .menu-container{
-    width: 90%;
+    width: 100%;
     display: flex;
-    margin: 25px auto;
-    gap: 20px;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 50px;
 }
 .menu-lista{
     padding: 20px;
@@ -314,7 +315,7 @@ header{
 
 #productos-container{
     display: grid;
-    grid-template-columns: repeat(3, 250px);
+    grid-template-columns: repeat(3, 270px);
     grid-template-rows: auto;
     gap: 20px;
 }
@@ -337,13 +338,13 @@ header{
 .carrito-container{
     background-color: #FAF4E3;
     height: auto;
-    width: 100%;
+    width: 20%;
     padding: 15px;
 }
 
 .titulo-carrito{
     text-align: center;
-    font-size: 30px;
+    font-size: 50px;
     font-family: lobster;
 }
 
@@ -379,9 +380,10 @@ header{
     width: 100%;
     margin-top: 10px;
     font-family: lobster;
+    font-size: 35px;
 }
 
-#limpiar-carrito{
+#limpiar-carrito, #confirmar-pedidos{
     width: 100%;
     font-size: 17px;
     color: #960018;
@@ -390,6 +392,7 @@ header{
     padding: 3px;
     margin: 20px auto;
 }
+
 
 /*ABOUT-US Section*/
 .nosotros-principal{
