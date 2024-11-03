@@ -114,6 +114,8 @@ let productos = [
     },
 ]
 
+//Carrito de compra para una tienda de hamburguesas online 
+
 //Variable en donde se van a estar guardando los pedidos
 let pedidos =  JSON.parse(localStorage.getItem('carrito')) || [];;
 
@@ -181,7 +183,7 @@ function quitarDelCarrito(id) {
     if (index !== -1) { //quita UNA sola hamburguesa si tiene mas de dos hamburguesas iguales en el pedido 
         if (carrito[index].cantidad > 1) {
             carrito[index].cantidad -= 1;
-        } else { //de haver una sola hamburguesa se eliminara el pedido entero del array
+        } else { //de haber una sola hamburguesa se eliminara el pedido entero del array
             carrito.splice(index, 1);
         }
     }
