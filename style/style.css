@@ -12,6 +12,24 @@ body{
 a{
     text-decoration: none;
 }
+.swal2-input{
+    width: 400px;
+    font-family: bebas-neue;
+    background-color: #FAF4E3;
+}
+.swal2-title{
+    font-family: bebas-neue;
+    font-size: 40px;
+}
+.swal2-confirm{
+    background-color: #960018;
+}
+.swal2-cancel{
+    background-color: #960018
+}
+.toastify{
+    color: #960018;
+}
 /*NAV-BAR*/
 .fondo{
     width: 100%;
@@ -32,14 +50,14 @@ a{
     display: flex;
     flex-direction: column;
     gap: 30px;
-    width: 400px;
-    height: auto;
+    width: 100%;
+    height: 100%;
     justify-content: space-between;
-    margin-left: 100px;
+    align-items: start;
+    padding:  30px 100px;
 }
 .screen-logo{
     width: 250px;
-    margin: auto;
 }
 .screen-texto h1{
     width: 600px;
@@ -48,14 +66,13 @@ a{
     font-family: bebas-neue;
 }
 .screen-texto p{
-    width: 1200px;
+    width: 100%;
     font-size: 60px;
     font-family: lobster;
 }
 .screen-button{
     display: flex;
     gap: 90px;
-    margin: auto;
 }
 .screen-button p{
     width: 400px;
@@ -67,13 +84,83 @@ a{
     padding: 10px 30px;
     margin: auto;
     font-size: 40px;
-    border: 1px solid red;
+    border: 2px solid #960018;
     border-radius: 10px;
     border-color: #960018;
-    background-color:transparent;
+    background-color: #FAF4E3;
     font-family: bebas-neue;
 }
 
+/*GRID PRINCIPAL CONTAINER*/
+.grid-container-principal{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto 370px;
+    grid-template-areas:
+    "grid-1 grid-2 grid-2"
+    "grid-1 grid-3 grid-4";
+    width: 80%;
+    margin: 25px auto;
+    gap: 20px;
+}
+
+.menu-principal-container{
+    background-color: #FAF4E3;
+    display: flex;
+    padding: 15px;
+    gap: 15px;
+}
+
+.menu-principal{
+    display: inline-block;
+}
+
+.menu-principal-container h3{
+    font-family: lobster;
+    font-size: 35px;
+    margin: 10px;
+    text-decoration: none;
+    color: #000;
+}
+
+.paty-gusto-nombre-principal{
+    text-decoration: underline;
+    font-family: bebas-neue;
+    font-size: 20px;
+    margin-bottom: 0px;
+    text-decoration: none;
+    color: #000;
+}
+
+.paty-gusto-descripcion-principal{
+    margin-bottom: 0px;
+    color: #000;
+    text-wrap: pretty;
+}
+
+.pollo-principal-container h3{
+    margin-top: 65px;
+}
+.promo-1, .promo-2{
+    height: 100%;
+    width: 100%;
+}
+.grid-1{
+    grid-area: grid-1;
+    background-image: url(../assets/img/nosotros/pexels-seyed-ali-hosseini-1226419-2331536.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+.grid-2{
+    grid-area: grid-2;
+}
+.grid-3{
+    grid-area: grid-3;
+}
+.grid-4{
+    grid-area: grid-4;
+}
 /*Nav bar menu*/
 header{
     position: sticky;
@@ -482,6 +569,7 @@ footer{
 }
 .footer-container{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
 }
 .img-footer{
@@ -531,4 +619,70 @@ footer{
 }
 .ul-footer-icon li a{
     color: #FAF4E3;
+}
+
+
+/*QUERI SECTION*/
+
+@media screen and (max-width:1500px) {
+
+    .grid-container-principal{
+        width: 93%;
+    }
+    .grid-1{
+        background-position: 60% 40%;
+    }
+    .review-container {
+        width: 90%;
+    }
+    .creaciones-container {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width:1200px) {
+    .texto-fondo-principal{
+        gap: 10px;
+        padding: 30px 50px;
+    }
+    .screen-logo{
+        width: 200px;
+    }
+    .screen-texto h1{
+        width: auto;
+        font-size: 90px;
+    }
+    .screen-texto p{
+        font-size: 60px;
+    }
+    .screen-button{
+        gap: 90px;
+    }
+    .screen-button p{
+        width: 400px;
+        font-size: 50px;
+    }
+}
+
+@media screen and (max-width:1050px) {
+    .banner-container{
+        height: 700px;
+    }
+    .screen-logo{
+        width: 190px;
+    }
+    .screen-texto h1{
+        font-size: 75px;
+    }
+    .screen-texto p{
+        font-size: 50px;
+    }
+    .screen-button{
+        gap: 50px;
+    }
+    .grid-container-principal{
+        grid-template-rows: auto 280px;
+        gap: 10px;
+    }
+    
 }
