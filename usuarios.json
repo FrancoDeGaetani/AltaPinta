@@ -1,0 +1,40 @@
+{
+    "usuarios":[
+        {
+            "perfil_foto": "../assets/img/clientes/person-2.jpg",
+            "usuario": "Juan_Toto",
+            "hamburguesa_resena" : "Stacker Doble",
+            "resena_texto": "Una hamburguesa irresistible con doble carne a la parrilla, crujiente tocino, queso derretido y pan suave. Ideal para los amantes de sabores intensos y abundantes."
+        },
+        {
+            "perfil_foto": "../assets/img/clientes/persona-1.jpg",
+            "usuario": "PatyLover",
+            "hamburguesa_resena" : "Stacker Doble",
+            "resena_texto": "Una hamburguesa irresistible con doble carne a la parrilla, crujiente tocino, queso derretido y pan suave. Ideal para los amantes de sabores intensos y abundantes."
+        }, 
+        {
+            "perfil_foto": "../assets/img/clientes/persona-3.jpg",
+            "usuario": "BurgerAddict",
+            "hamburguesa_resena" : "Stacker Doble",
+            "resena_texto": "Una hamburguesa irresistible con doble carne a la parrilla, crujiente tocino, queso derretido y pan suave. Ideal para los amantes de sabores intensos y abundantes."
+        }, 
+        {
+            "perfil_foto": "../assets/img/clientes/persona-4.jpg",
+            "usuario": "LunaRising",
+            "hamburguesa_resena" : "Stacker Doble",
+            "resena_texto": "Una hamburguesa irresistible con doble carne a la parrilla, crujiente tocino, queso derretido y pan suave. Ideal para los amantes de sabores intensos y abundantes."
+        },
+        {
+            "perfil_foto": "../assets/img/clientes/persona-6.jpg",
+            "usuario": "BurgerAddict",
+            "hamburguesa_resena" : "Stacker Doble",
+            "resena_texto": "Una hamburguesa irresistible con doble carne a la parrilla, crujiente tocino, queso derretido y pan suave. Ideal para los amantes de sabores intensos y abundantes."
+        }, 
+        {
+            "perfil_foto": "../assets/img/clientes/persona-8.jpg",
+            "usuario": "BurgerAddict",
+            "hamburguesa_resena" : "Stacker Doble",
+            "resena_texto": "Una hamburguesa irresistible con doble carne a la parrilla, crujiente tocino, queso derretido y pan suave. Ideal para los amantes de sabores intensos y abundantes."
+        }
+    ]
+}
