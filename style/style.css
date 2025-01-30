@@ -12,6 +12,9 @@ body{
 a{
     text-decoration: none;
 }
+p{
+    margin-bottom: 0;
+}
 .swal2-input{
     width: 400px;
     font-family: bebas-neue;
@@ -165,7 +168,7 @@ header{
 .paty-gusto-nombre-principal{
     text-decoration: underline;
     font-family: bebas-neue;
-    font-size: 20px;
+    font-size: 25px;
     margin-bottom: 0px;
     color: #000;
 }
@@ -174,6 +177,7 @@ header{
     margin-bottom: 0px;
     color: #000;
     text-wrap: pretty;
+    font-size: 18px;
 }
 
 .promo-1, .promo-2{
@@ -183,7 +187,7 @@ header{
 .grid-1{
     width: 100%;
     grid-area: grid-1;
-    background-image: url(../assets/img/nosotros/pexels-seyed-ali-hosseini-1226419-2331536.jpg);
+    background-image: url(../assets/img/fondos/fondo-menu-4.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 30% 70%;
@@ -205,7 +209,6 @@ header{
     width: 200%;
     height: 100%;
     display: flex;
-    /* transform: translate(-50%); */
 }
 .slider-section-carrusel-promo{
     width: calc(100% / 2);
@@ -223,12 +226,12 @@ header{
     justify-content: center;
     align-items: center;
     top: 50%;
-    background-color: #FAF4E3;
-    border: 1px solid #960018;
     transform: translate(0,50%);
     transition: .5s ease;
-    height: 50px;
     width: 35px;
+    background-color: transparent;
+    color: #960018;
+    border:none;
 }
 .btn-derecha{
     right: 10px;
@@ -295,10 +298,6 @@ header{
     margin: 30px auto;
     background-color: #FAF4E3;
 }
-#carrucel-home-container{
-    display: flex;
-    
-}
 .review-container h2 {
     text-align: center;
     padding: 15px;
@@ -311,34 +310,82 @@ header{
     font-size: 20px;
     text-align: center;
 }
-.review{
-    width: 270px;
-    margin: 30px auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 15px;
-}
-.review-img{
+.carrucel-home-container{
     width: 100%;
+    height: 100%;
+    background-color: #FAF4E3;
+    overflow: hidden;
+    position: relative;
+}
+#carrucel-reviews{
+    width: 600%;
+    height: 100%;
+    display: flex;
+}
+.review{
+    width: calc(100%/6);
+    height: 300px;
+    display: flex;  
+    gap: 30px;
+    padding: 50px;
+    justify-content: center;
+}
+.review img{
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 500px;
+    width: 200px;
+}
+.review-texto-container{
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
 }
 .review-usuario{
     text-align: center;
-    padding:5px;
-    font-size: 22px;
+    font-family: lobster;
+    font-size: 30px;
 }
-.review-paty{
-    text-align: center;
-    width: 100%;
-    text-decoration: none;
-    font-family: bebas-neue;
-    font-size: 20px;
+.link-review{
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+.link-review p {
+    font-family: lobster;
+    font-size: 25px;
+    color: #000;
+}
+.link-review a{
+    font-family: lobster;
+    color: #960018;
+    font-size: 25px;
+    background-color: #FAF4E3;
+    border-radius: 10px;
 }
 .review-texto{
-    padding: 5px;
+    width: 500px;
     text-align: center;
-    font-size: 18px;
-
+}
+.btn-izquierda-review,
+.btn-derecha-review{
+    display: flex;
+    position: absolute;
+    top: 40%;
+    cursor: pointer;
+    transition: .5s ease;
+    user-select: none;
+    width: 40px;
+    justify-content: center;
+    background-color: transparent;
+    color: #960018;
+    border:none;
+}
+.btn-derecha-review{
+    right: 50px;
+}
+.btn-izquierda-review{
+    left: 50px;
 }
 
 /*Creaciones-section*/

@@ -10,6 +10,10 @@ let translate = 0,
     contador= 0,
     widthImg = (100 / sliderSection.length);
 
+    setInterval(() => {
+        moverDerecha()
+    }, 5000);
+    
 
 function moverDerecha (){
 
