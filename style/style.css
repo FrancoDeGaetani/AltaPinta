@@ -297,6 +297,7 @@ header{
     width: 70%;
     margin: 30px auto;
     background-color: #FAF4E3;
+    border: 1px solid #000;
 }
 .review-container h2 {
     text-align: center;
@@ -397,7 +398,7 @@ header{
     height: 600px;
     width: 70%;
     margin: auto;
-    border: 1px solid #F4A300;
+    border: 1px solid #000;
     margin-bottom: 60px;
 }
 .creaciones-texto-container{
@@ -574,87 +575,117 @@ header{
 }
 
 
-/*ABOUT-US Section*/
+
+                                                    /*ABOUT-US Section*/
+
 .nosotros-principal{
     background-image: url(../assets/img/nosotros/nosotros-principal.jpg);
     background-size: cover;
     background-position: center;
-    height: 700px;
+    height:650px;
 }
 /*Nosotros-Section*/
-.historia-section{
-    width: 1200px;
-    height: 700px;
-    margin: 50px auto;
-    background-color: #FAF4E3;
-    padding: 50px;
+.presentacion{
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    width: 75%;
+    margin:40px auto;
+    background-color: #FAF4E3;
+    gap: 20px;
+    border-radius: 20px;
 }
-.historia-section h2{
-    font-size: 40px;
-    text-align: center;
-    /* padding-bottom: 15px; */
-    font-family: bebas-neue;
+.presentacion-img-container{
+    height:600px;
+    width: 500px;
 }
-.historia-img-container{
-    width: 420px;
+.presentacion-img-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
-.historia-img{
-    width: 420px;
-    height: auto;
-    position: absolute;
-    z-index: 20;
-    border-radius: 10px;
-    border: 2px solid #F4A300;
-}
-.historia-img:hover{
-    opacity: 0.2;   
-}
-
-.historia-img-container p{
-    position: relative;
-    z-index: 10;
-    padding: 17px;
-    font-size: 17px;
-}
-/*Formulario Section*/
-.form-container{
-    height: auto;
-}
-form{
-    width: 400px;
-    height: 97%;
-    padding: 15px;
-    background-color: #960018;
-    border-radius: 15px;
-}
-form h2{
-    color: #FAF4E3;
-}
-.part-form{
+.presentacion-text-container{
+    width: 70%;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 40px;
 }
-.part-form label{
-    margin-top: 15px;
-    color: #FAF4E3;
+.presentacion-text-container h2{
+    font-size: 60px;
+    font-family: lobster;
     text-align: center;
-    letter-spacing: 3px;
 }
-.part-form input{
-    padding: 4px;
+.presentacion-text-container p{
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+    
+}
+
+/*Nosotros-Form*/
+.contacto{
+    width: 75%;
+    margin: 40px auto;
     background-color: #FAF4E3;
+    border-radius: 20px;
+    display: flex;
+}
+.contacto-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 50px;
+    width: 100%;
+    
+}
+.contacto-form h2{
+    font-size: 60px;
+    font-family: lobster;
+    text-align: center;
+}
+.contacto-form-campo{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+.contacto-form-campo label{
+    font-size: 25px;
+    font-family: bebas-neue;
+    text-align: center;
+}
+.contacto-form-campo input{
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 1px solid #960018;
+}
+.contacto-trabajo{
+    flex-direction: row;
+    gap: 10px;
+}
+textarea{
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 1px solid #960018;
+    min-width: 100%;
+    min-height: 200px;
+    resize: none;
+}
+.contacto-form-campo button{
+    width: 200px;
+    padding: 10px;
+    font-size: 20px;
+    color: #fff;
+    background-color: #960018;
+    border-radius: 10px;
     border: none;
-
+    margin: auto;
+    cursor: pointer;
 }
-.text-area-container textarea{
-    height: 125px;
-    background-color: #FAF4E3;
-}
-
-
 
 /*Footer section*/
 footer{
