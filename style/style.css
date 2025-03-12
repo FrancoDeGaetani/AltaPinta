@@ -46,7 +46,7 @@ header{
     height: 60px;
     opacity: 0.8;
 }
-.li-container-menu ul{
+.hidden-ul-menu{
     height: 60px;
     width: 60%;
     display: flex;
@@ -59,7 +59,7 @@ header{
     margin: auto;
     
 }
-.nav-bar-li-menu button{
+.nav-bar-usuario-button{
     background-color: transparent;
     border: none;
 }
@@ -73,6 +73,9 @@ header{
 }
 .nav-bar-li-menu a:hover{
     text-decoration:underline;
+}
+.nav-bar-usuario-button svg{
+    color: #960018;
 }
 .menu-hamburguesa{
     display: none;
@@ -1021,6 +1024,161 @@ footer{
 
 @media screen and (max-width:800px){
 
+                /*TOGGEL MENU */
+                /*ESTILO DESACTIVADO DEL MENU HAMBURGUESA*/
+    .menu-toggle{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 60px;
+        border-radius: 10px;
+        border: 3px solid #960018;
+        box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2);
+        background-color: #FAF4E3;
+        transition: all .5s ease;
+        transform-origin: left;
+        gap: 12px;
+        position: absolute;
+        top: 40px;
+        right: 40px;
+    }
+    .menu-toggle .line{
+        position: relative;
+        width: 40px;
+        height: 5px;
+        background-color: #960018;
+        border-radius: 10px;
+    }
+    .menu-toggle .line:first-child{
+        top: 0;
+        transform: rotate(0);
+        transition: top .5s ease, transform .4s ease;
+    }
+    .menu-toggle .line:nth-child(2){
+        opacity: 1;
+        visibility: visible;
+        transition: all .2s ease;
+    }
+    .menu-toggle .line:last-child{
+        top: 0;
+        transform: rotate(0);
+        transition: top .5s ease, transform .4s ease;
+    }
+
+                    /*ESTILO ACTIVE DEL MENU HAMBURGUESA*/
+
+    .menu-toggle.active{
+        border: 3px solid #FAF4E3;
+        background-color: #960018;
+    }
+    .menu-toggle.active .line{
+        background-color: #FAF4E3;
+    }
+
+    .menu-toggle.active .line:first-child{
+        top: 18px;
+        transform: rotate(45deg);
+    }
+    .menu-toggle.active .line:nth-child(2){
+        opacity: 0;
+        visibility: hidden;
+    }
+    .menu-toggle.active .line:last-child{
+        top: -16px;
+        transform: rotate(-45deg);
+    }
+
+
+                /*NAV BAR*/
+                
+    .nav-bar-menu{
+        background-color: transparent;
+        width: 70%;
+        opacity: .9;
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    .hidden-ul-menu{
+        display: none;
+    }
+    .hidden-ul-menu.active{
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        justify-content: end;
+        align-items: center;
+        margin: 0;
+        padding-bottom: 120px;
+        padding-left: 0;
+        background-color: #960018;
+    }
+    .nav-bar-li-menu{
+        width:90%;
+        margin: 0;
+
+    }
+
+    .nav-bar-li-menu a{
+        width: 100%;
+        text-align: center;
+        background-color: #FAF4E3;
+        color: #960018;
+        border-radius: 20px;
+        border:3px solid #000;
+    }
+
+    .nav-bar-li-menu a:hover{
+        text-decoration:none;
+        background-color: #960018;
+        color: #FAF4E3;
+        border-radius: 20px;
+        border:3px solid #FAF4E3;
+    }
+
+    .menu-hamburguesa{
+        display: block;
+        margin: 0;
+    }
+    .nav-bar-li-menu:last-child{
+        background-color: #960018;
+        display: flex;
+        gap: 10px;
+        justify-content: space-evenly;
+    }
+    .nav-bar-usuario-button{
+        width: 100%;
+        height: 66px;
+        background-color: #FAF4E3;
+        color: #960018;
+        border-radius: 20px;
+        border:3px solid #000;
+        padding: 7px;
+    }
+    .nav-bar-usuario-button:hover{
+        background-color: #960018;
+        color: #FAF4E3;
+        border-radius: 20px;
+        border:3px solid #FAF4E3;
+    }
+    .nav-bar-usuario-button svg{
+        color: #960018;
+        width: 100%;
+        height: 100%;
+    }
+    .nav-bar-usuario-button svg path{
+        width: 10px;
+        height: 10px;
+    }
+    .nav-bar-usuario-button svg:hover{
+        color: #FAF4E3;
+    }
+
                         /*BANNER-PRINCIPAL*/
     .texto-fondo-principal{
         gap: 40px;
@@ -1049,25 +1207,10 @@ footer{
 }
 
 @media screen and (max-width:640px){
-    
-    .li-container-menu ul{
+
+                    /*NAV BAR*/
+    .nav-bar-menu{
         width: 80%;
-        justify-content: end;
-    }
-    .nav-bar-li-menu{
-        display: none;
-    }
-    .menu-hamburguesa{
-        display: block;
-        margin: 0;
-    }
-    .menu-hamburguesa button{
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: transparent;
     }
                         /*BANNER-PRINCIPAL*/
     .banner-container{
@@ -1172,6 +1315,11 @@ footer{
 }
 
 @media screen and (max-width:550px){
+
+                        /*NAV BAR*/
+    .nav-bar-menu{
+        width: 100%;
+    }
                             /*BANNER-PRINCIPAL*/
     .banner-container{
         background-position:58% 42%;
