@@ -16,7 +16,7 @@ p{
     margin-bottom: 0;
 }
 .swal2-input{
-    width: 400px;
+    width: auto;
     font-family: bebas-neue;
     background-color: #FAF4E3;
 }
@@ -80,326 +80,10 @@ header{
 .menu-hamburguesa{
     display: none;
 }
-/*BANNER-PRINCIPAL*/
-.fondo{
-    width: 100%;
-    position: absolute;
-}
-.screen-button a{
-    text-decoration: none;
-    color: #960018;
-    display: inline-block;
-}
-.banner-container{
-    background-image: url(../assets/img/fondos/fondo.png);
-    background-size: cover;
-    height: auto;
-}
-.texto-fondo-principal{
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    width: 100%;
-    height: 100%;
-    align-items: start;
-    padding:  50px 100px;
-    justify-content: center;
-}
-.screen-logo{
-    width: 250px;
-}
-.screen-texto h1{
-    width: auto;
-    font-size: 100px;
-    margin-bottom: 30px;
-    font-family: bebas-neue;
-}
-.screen-texto p{
-    width: 100%;
-    font-size: 60px;
-    font-family: lobster;
-}
-.screen-button{
-    display: flex;
-    gap: 90px;
-}
-.screen-button p{
-    width: 400px;
-    font-size: 50px;
-    margin: auto;
-    font-family: bebas-neue;
-}
-.screen-button a {
-    padding: 10px 30px;
-    margin: auto;
-    font-size: 40px;
-    border: 2px solid #960018;
-    border-radius: 10px;
-    border-color: #960018;
-    background-color: #FAF4E3;
-    font-family: bebas-neue;
-}
-
-                                /*FLEX PRINCIPAL CONTAINER*/
-.flex-container-principal{
-    display: flex;
-    width: 80%;
-    margin: 25px auto;
-    border-radius: 25px;
-    border-bottom-right-radius: 0;
-    border: 5px solid #000;
-}
-
-.menu-principal-container{
-    background-color: #FAF4E3;
-    display: flex;
-    padding: 15px;
-    gap: 15px;
-    border-top-right-radius: 20px;
-}
-
-.menu-principal{
-    display: inline-block;
-}
-
-.menu-principal-container h3{
-    font-family: lobster;
-    font-size: 35px;
-    margin: 10px;
-    color: #000;
-}
-
-.paty-gusto-nombre-principal{
-    text-decoration: underline;
-    font-family: bebas-neue;
-    font-size: 25px;
-    margin-bottom: 0px;
-    color: #000;
-}
-
-.paty-gusto-descripcion-principal{
-    margin-bottom: 12px;
-    color: #000;
-    text-wrap: pretty;
-    font-size: 18px;
-}
 
 
-.promo-1, .promo-2{
-    height: 100%;
-    width: 100%;
-}
-.grid-1{
-    width: 700px;
-    background-image: url(../assets/img/fondos/fondo-menu-4.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 30% 70%;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-}
-.grid-2{
-    grid-area: grid-2;
-}
 
-.container-carrusel-home{
-    width: 450px;
-    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.6);
-    overflow: hidden;
-    position: relative;
-    margin: auto;
-}
-.carruseles-promo{
-    width: 200%;
-    height: 100%;
-    display: flex;
-}
-.slider-section-carrusel-promo{
-    width: calc(100% / 2);
-    height: 100%;
-}
-.slider-section-carrusel-promo img{
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
-}
-.btn-izquierda,
-.btn-derecha{
-    display: flex;
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-    top: 50%;
-    transform: translate(0,50%);
-    transition: .5s ease;
-    width: 35px;
-    background-color: transparent;
-    color: #FAF4E3;
-    border:none;
-}
-.btn-derecha{
-    right: 10px;
-}
-.btn-izquierda{
-    left: 10px;
-}
 
-.carrucel-home{
-    width: 100%;
-    height: 275px;
-    margin-top: 20px;
-    background-color: #fff;
-}
-                                    /* REVIEW-SECTION */
-.review-container{
-    width: 70%;
-    margin: 30px auto;
-    background-color: #FAF4E3;
-    border: 5px solid #000;
-    border-radius: 20px;
-}
-.review-container h2 {
-    text-align: center;
-    padding: 15px;
-    font-size: 60px;
-    font-family: lobster;
-}
-.review-subtitulo{
-    font-size: 20px;
-    text-align: center;
-}
-.carrucel-home-container{
-    width: 100%;
-    height: 100%;
-    background-color: #FAF4E3;
-    overflow: hidden;
-    position: relative;
-    border-radius: 20px;
-}
-#carrucel-reviews{
-    width: 600%;
-    height: 100%;
-    display: flex;
-}
-.review{
-    width: calc(100%/6);
-    height: 300px;
-    display: flex;  
-    gap: 30px;
-    padding: 50px;
-    justify-content: center;
-}
-.review img{
-    height: 100%;
-    object-fit: cover; 
-    border-radius: 50%;
-    width: 200px;
-}
-.review-texto-container{
-    display: flex;
-    gap: 15px;
-    flex-direction: column;
-}
-.review-usuario{
-    text-align: center;
-    font-family: lobster;
-    font-size: 30px;
-}
-.review-paty{
-    text-align: center;
-    text-wrap: pretty;
-}
-.link-review{
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    text-align: center;
-    text-overflow: pretty;
-}
-.link-review p {
-    font-family: lobster;
-    font-size: 25px;
-    color: #000;
-}
-.link-review a{
-    font-family: lobster;
-    color: #960018;
-    font-size: 25px;
-    background-color: #FAF4E3;
-    border-radius: 10px;
-}
-.review-texto{
-    width: 500px;
-    text-align: center;
-}
-.btn-izquierda-review,
-.btn-derecha-review{
-    display: flex;
-    position: absolute;
-    top: 40%;
-    cursor: pointer;
-    transition: .5s ease;
-    user-select: none;
-    width: 40px;
-    justify-content: center;
-    background-color: transparent;
-    color: #960018;
-    border:none;
-}
-.btn-derecha-review{
-    right: 50px;
-}
-.btn-izquierda-review{
-    left: 50px;
-}
-
-                                /*CREACIONES-SECTION*/
-
-.creaciones-container{
-    background-image: url(../assets/img/fondos/promo1.png);
-    background-size: cover;
-    background-position: center;
-    height: 600px;
-    width: 70%;
-    margin: auto;
-    border: 5px solid #000;
-    margin-bottom: 60px;
-    border-radius: 20px;
-    border-bottom-left-radius: 0px;
-}
-.creaciones-texto-container{
-    height: 100%;
-    width: 400px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-.creaciones-titulo{
-    width: 400px;
-    color: #960018;
-    font-size: 60px;
-    text-align: center;
-    font-family: bebas-neue;
-}
-.creaciones-texto{
-    width: 400px;
-    color: #960018;
-    font-size: 40px;
-    text-align: center;
-    font-family: lobster;
-}
-.creaciones-button{
-    width: 200px;
-    padding: 10px;
-    margin: 0px auto;
-    text-align: center;
-    font-size: 25px;
-    color: #fff;
-    background-color: #960018;
-    border-radius: 10px;
-    font-family: bebas-neue;
-}
                                         /*MENU-SECTION*/
 .gustos-container{
     display: flex;
@@ -624,119 +308,6 @@ header{
     margin: 20px auto;
 }
 
-
-
-                                /*ABOUT-US Section*/
-
-.nosotros-principal{
-    background-image: url(../assets/img/nosotros/nosotros-principal.jpg);
-    background-size: cover;
-    background-position: center;
-    height:650px;
-}
-/*Nosotros-Section*/
-.presentacion{
-    display: flex;
-    align-items: center;
-    width: 75%;
-    margin:40px auto;
-    background-color: #FAF4E3;
-    gap: 20px;
-    border-radius: 20px;
-}
-.presentacion-img-container{
-    height:600px;
-    width: 500px;
-}
-.presentacion-img-container img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-}
-.presentacion-text-container{
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-}
-.presentacion-text-container h2{
-    font-size: 60px;
-    font-family: lobster;
-    text-align: center;
-}
-.presentacion-text-container p{
-    font-size: 20px;
-    padding: 20px;
-    text-align: center;
-    
-}
-
-/*Nosotros-Form*/
-.contacto{
-    width: 75%;
-    margin: 40px auto;
-    background-color: #FAF4E3;
-    border-radius: 20px;
-    display: flex;
-}
-.contacto-form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 50px;
-    width: 100%;
-    
-}
-.contacto-form h2{
-    font-size: 60px;
-    font-family: lobster;
-    text-align: center;
-}
-.contacto-form-campo{
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-}
-.contacto-form-campo label{
-    font-size: 25px;
-    font-family: bebas-neue;
-    text-align: center;
-}
-.contacto-form-campo input{
-    width: 100%;
-    padding: 10px;
-    font-size: 20px;
-    border-radius: 10px;
-    border: 1px solid #960018;
-}
-.contacto-trabajo{
-    flex-direction: row;
-    gap: 10px;
-}
-textarea{
-    padding: 10px;
-    font-size: 20px;
-    border-radius: 10px;
-    border: 1px solid #960018;
-    min-width: 100%;
-    min-height: 200px;
-    resize: none;
-}
-.contacto-form-campo button{
-    width: 200px;
-    padding: 10px;
-    font-size: 20px;
-    color: #fff;
-    background-color: #960018;
-    border-radius: 10px;
-    border: none;
-    margin: auto;
-    cursor: pointer;
-}
-
 /*Footer section*/
 footer{
     background-color: #000;
@@ -800,130 +371,19 @@ footer{
 /*QUERI SECTION*/
 
 @media screen and (max-width: 1700px) {
-    .flex-container-principal{
-        width: 95%;
-    }
-    .review-container {
-        width: 90%;
-    }
-    .creaciones-container {
-        width: 90%;
-    }
+
 }
 
 @media screen and (max-width:1550px) {
-    .container-carrusel-home{
-        width: 450px;
-    }
-    
 
 }
 
 @media screen and (max-width:1400px) {
     
-                    /*BANNER-PRINCIPAL*/
-    .texto-fondo-principal{
-        gap: 25px;
-        width: 60%;
-        padding:  50px 80px;
-    }
-    .screen-logo{
-        width: 250px;
-    }
-    .screen-texto h1{
-        font-size: 90px;
-        margin-bottom: 15px;
-    }
-    .screen-texto p{
-        width: 100%;
-        font-size: 50px;
-    }
-    .screen-button{
-        gap: 80px;
-    }
-    .screen-button p{
-        width: auto;
-        font-size: 50px;
-        text-align: center;
-        margin: 0;
-    }
-    .screen-button a {
-        padding: 5px 25px;
-        font-size: 38px;
-    }
-    .menu-principal-container h3{
-        font-size: 30px;
-        margin: 5px;
-    }
-    .paty-gusto-nombre-principal{
-        font-size: 21px;
-    }
-    
-    .paty-gusto-descripcion-principal{
-        font-size: 16px;
-    }
-    .container-carrusel-home{
-        width: 400px;
-    }
-    
 }
 @media screen and (max-width:1200px) {
-                        /*BANNER-PRINCIPAL*/
-    .texto-fondo-principal{
-        gap: 20px;
-        padding:  50px 80px;
-        width: auto;
-    }
-    .screen-logo{
-        width: 190px;
-    }
-    .screen-texto h1{
-        font-size: 80px;
-        margin-bottom: 15px;
-    }
-    .screen-texto p{
-        font-size: 40px;
-    }
-    .screen-button{
-        gap: 70px;
-    }
-    .screen-button p{
-        width: auto;
-        font-size: 40px;
-        text-align: center;
-        margin: 0;
-    }
-    .screen-button a {
-        padding: 5px 25px;
-        font-size: 38px;
-    }
 
-
-    .menu-principal-container{
-        flex-direction: column;
-        gap: 0;
-    }
-    .grid-container-principal{
-        gap: 15px;
-        grid-template-columns: 400px;
-    }
-    .container-carrusel-home{
-        width: 450px;
-        margin: auto;
-    }
-                /*CREACIONES-SECTION*/
-    .creaciones-container{
-    height: 500px;
-    }
-    .creaciones-titulo{
-        font-size: 50px;
-    }
-    .creaciones-texto{
-        font-size: 33px;
-    }
-    
                 /*Footer section*/
-
     .footer-container{
         display: flex;
         flex-direction: column;
@@ -953,79 +413,16 @@ footer{
 
 @media screen and (max-width:1050px) {
 
-                            /*BANNER-PRINCIPAL*/
-    .banner-container{
-        background-position: 50% 50%;
-    }
-    .texto-fondo-principal{
-        gap: 40px;
-        padding:  40px 80px;
-        height: 800px;
-    }
-    .screen-logo{
-        width: 230px;
-    }
-    .screen-texto h1{
-        font-size: 70px;
-        margin-bottom: 10px;
-    }
 
-    .grid-container-principal{
-        grid-template-rows: auto 280px;
-        gap: 10px;
-    }
-    .grid-1{
-        width: 500px;
-        background-position: 40% 60%;
-    }
-                    /*Review Section*/
-    .review-subtitulo{
-        font-size: 20px;
-        text-align: center;
-        margin: 0 30px;
-        text-wrap: pretty;
-        
-    }
-    .review{
-        height: 500px;
-        flex-direction: column;
-        gap: 10px;
-        padding: 20px;
-        align-items: center;
-    }
-    .review img{
-        height:200px;
-        object-fit: cover; 
-        border-radius: 50%;
-        width: 200px;
-    }
-                    /*CREACIONES-SECTION*/
-    .creaciones-container{
-        width: 95%;
-        height: 450px;
-    }
-    .creaciones-titulo{
-        font-size: 40px;
-    }
-    .creaciones-texto{
-        font-size: 25px;
-    }
 }
 @media screen and (max-width: 950px){
-                                /*BANNER-PRINCIPAL*/
-    .texto-fondo-principal{
-        padding:  40px 60px;
-    }
-    .grid-1{
-        width: 400px;
-        background-position: 50% 50%;
-    }
+
 }
 
 @media screen and (max-width:800px){
 
-                /*TOGGEL MENU */
-                /*ESTILO DESACTIVADO DEL MENU HAMBURGUESA*/
+        /*TOGGEL MENU */
+        /*ESTILO DESACTIVADO DEL MENU HAMBURGUESA*/
     .menu-toggle{
         display: flex;
         flex-direction: column;
@@ -1067,7 +464,7 @@ footer{
         transition: top .5s ease, transform .4s ease;
     }
 
-                    /*ESTILO ACTIVE DEL MENU HAMBURGUESA*/
+        /*ESTILO ACTIVE DEL MENU HAMBURGUESA*/
 
     .menu-toggle.active{
         border: 3px solid #FAF4E3;
@@ -1178,264 +575,27 @@ footer{
     .nav-bar-usuario-button svg:hover{
         color: #FAF4E3;
     }
-
-                        /*BANNER-PRINCIPAL*/
-    .texto-fondo-principal{
-        gap: 40px;
-        padding:  40px 20px;
-        height: 800px;
-    }
-
-    .grid-1{
-        width: 300px;
-        background-position: 55% 45%;
-    }
-
-                        /*CREACIONES-SECTION*/
-    .creaciones-container{
-        background-image: url(../assets/img/fondos/promo1.png);
-        background-size: cover;
-        background-position: center;
-        height: 390px;
-    }
-    .creaciones-titulo{
-        font-size: 35px;
-    }
-    .creaciones-texto{
-        font-size: 25px;
-    }
 }
 
 @media screen and (max-width:640px){
 
-                    /*NAV BAR*/
+    /*NAV BAR*/
     .nav-bar-menu{
         width: 80%;
     }
-                        /*BANNER-PRINCIPAL*/
-    .banner-container{
-        background-position:60% 40%;
-    }
-    .texto-fondo-principal{
-        gap: 40px;
-        padding:  0;
-        height: 750px;
-        justify-content: start;
-    }
-    .screen-logo{
-        margin: 30px;
-        margin-top: 50px;
-        width: 210px;
-    }
-    .screen-texto {
-        display: none;
-    }
-    .screen-button{
-        display: none;
-    }
-
-    .menu-principal-container{
-        border-top-left-radius: 20px;
-        border-bottom-left-radius: 20px;
-    }
-    .grid-1{
-        display: none;
-    }
-    .carne-principal-container h3, .pollo-principal-container h3{
-        text-align: center;
-    }
-    .review-texto{
-        width: 90%;
-        text-align: center;
-        margin: auto;
-    }
-                        /* Review-Section */
-    .review-container {
-        width: 95%;
-    }
-    .link-review{
-        flex-direction: column;
-        gap: 0;
-        align-items: center;
-    }
-
-                            /*CREACIONES-SECTION*/
-    .creaciones-container{
-        background-position: 100% 0%;
-        height: 545px;
-        display: flex;
-        justify-content: start;
-    }
-    .circulo-creaciones{
-        background-color: #000;
-        height: 40%;
-        position: relative;
-        top: -10px;
-        left: -10px;
-        border-bottom-right-radius: 90%;
-        padding: 10px;
-        border: 15px solid #960018;
-    }
-    .creaciones-texto-container{
-        height: 545px;
-        width: 70%;
-        margin: 0;
-        display: block;
-        position: absolute;
-    }
-    .creaciones-titulo{
-        width: 100%;
-        color: #FAF4E3;
-        font-size: 38px;
-        text-align: start;
-        margin-bottom: 0;
-    }
-    .creaciones-texto{
-        margin-left: 10px;
-        width: auto;
-        color: #FAF4E3;
-        font-size: 28px;
-        text-align: start;
-    }
-    .creaciones-button{
-        height: 15%;
-        width: 70%;
-        padding: 0;
-        margin: 0;
-        color: #fff;
-        background-color: #000;
-        border: 10px solid #960018;
-        border-radius: 0;
-        border-top-right-radius: 90%;
-        line-height: 80px;
-        bottom: -10px;
-        left: -10px;
-        position: absolute;
-    } 
 }
 
 @media screen and (max-width:550px){
 
-                        /*NAV BAR*/
+    /*NAV BAR*/
     .nav-bar-menu{
         width: 100%;
     }
-                            /*BANNER-PRINCIPAL*/
-    .banner-container{
-        background-position:58% 42%;
-    }
-    .texto-fondo-principal{
-        height: 700px;
-    }
-    .screen-logo{
-        margin: 5px;
-        margin-top: 50px;
-        width: 190px;
-    }
-    .container-carrusel-home{
-        width: 100%;
-        height: auto;
-    }
-                        /*Review-Section */
-    .review{
-        height: 620px;
-        gap: 50px;
-        padding: 0;
-        justify-content: center;
-    }
-    .btn-derecha-review{
-        right: 20px;
-    }
-    .btn-izquierda-review{
-        left: 20px;
-    }
-                        /*CREACIONES-SECTION*/
 
-    .creaciones-container{
-        background-position: 100% 0%;
-        height: 455px;
-    }
-    .creaciones-titulo{
-        width: auto;
-        font-size: 38px;
-    }
-    .creaciones-texto{
-        margin-left: 10px;
-        width: auto;
-        font-size: 28px;
-    }
-    .creaciones-texto-container{
-        height: 455px;
-    }
-    .creaciones-titulo{
-        font-size: 30px;
-    }
-    .creaciones-texto{
-        margin-left: 5px;
-        font-size: 25px;
-    }
-    .creaciones-button{
-        height: 15%;
-        width: 70%;
-        padding-left: 40px;
-        line-height: 50px;
-        font-size: 20px;
-        text-align: start;
-    } 
 }
 
-@media screen and (max-width:400px){
-                                /*BANNER-PRINCIPAL*/
-    .banner-container{
-        background-position:60% 40%;
-    }
-    .texto-fondo-principal{
-        height: 600px;
-    }
-    .screen-logo{
-        margin: 5px;
-        margin-top: 60px;
-        width: 170px;
-    }
-                            /*Review-Section */
-    .review-container h2 {
-        font-size: 47px;
-    }
-    .review-subtitulo{
-        font-size: 18px;
-        text-align: center;
-        margin: 0 10px;
-    }
-    .btn-derecha-review{
-        right: 10px;
-    }
-    .btn-izquierda-review{
-        left: 10px;
-    }
-                        /*CREACIONES-SECTION*/
-    .creaciones-container{
-        background-position: 100% 0%;
-        height: 420px;
-    }
-    .creaciones-texto-container{
-        height: 420px;
-    }
-    .creaciones-titulo{
-        font-size: 22px;
-        margin-bottom: 5px;
-    }
-    .creaciones-texto{
-        margin-left: 5px;
-        font-size: 14px;
-    }
-    .creaciones-button{
-        height: 20%;
-        width: 80%;
-        padding-left: 30px;
-        line-height: 60px;
-        font-size: 20px;
-        text-align: start;
-    } 
+@media screen and (max-width:400px){ 
+
     /*FOOTER-SECTION*/
     .img-footer{
         width: 200px;

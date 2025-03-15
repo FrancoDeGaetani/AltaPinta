@@ -1,0 +1,263 @@
+                                /*ABOUT-US Section*/
+
+.nosotros-principal{
+    background-image: url(../assets/img/nosotros/nosotros-principal.jpg);
+    background-size: cover;
+    background-position: center;
+    height:650px;
+}
+/*Nosotros-Section*/
+.presentacion{
+    display: flex;
+    align-items: center;
+    width: 85%;
+    margin:40px auto;
+    background-color: #FAF4E3;
+    gap: 20px;
+    border-radius: 25px;
+    border: 5px solid #000;
+}
+.presentacion-img-container{
+    height:600px;
+    width: 500px;
+}
+.presentacion-img-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.presentacion-text-container{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.presentacion-text-container h2{
+    font-size: 60px;
+    font-family: lobster;
+    text-align: center;
+}
+.presentacion-text-container p{
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+    
+}
+
+/*Nosotros-Form*/
+.contacto{
+    width: 85%;
+    margin: 40px auto;
+    background-color: #FAF4E3;
+    border-radius: 20px;
+    display: flex;
+}
+.contacto-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 50px;
+    width: 100%;
+    
+}
+.contacto-form h2{
+    font-size: 60px;
+    font-family: lobster;
+    text-align: center;
+}
+.contacto-form-campo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.contacto-form-campo label{
+    font-size: 25px;
+    font-family: bebas-neue;
+    text-align: center;
+}
+.contacto-form-campo input{
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 1px solid #960018;
+}
+.contacto-trabajo{
+    flex-direction: row;
+    gap: 10px;
+    
+}
+.contacto-trabajo-nombre, .contacto-trabajo-apellido{
+    width: 100%;
+}
+.contacto-trabajo-apellido label,.contacto-trabajo-nombre label{
+    font-size: 25px;
+    font-family: bebas-neue;
+    text-align: center;
+    display: block;
+}
+.contacto-trabajo-apellido input,.contacto-trabajo-nombre input{
+    width: 100%;
+}
+
+textarea{
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 1px solid #960018;
+    min-width: 100%;
+    min-height: 200px;
+    resize: none;
+}
+.contacto-form-campo button{
+    width: 200px;
+    padding: 10px;
+    font-size: 20px;
+    color: #fff;
+    background-color: #960018;
+    border-radius: 10px;
+    border: none;
+    margin: auto;
+    cursor: pointer;
+}
+
+/*QUERI SECTION*/
+
+@media screen and (max-width: 1700px) {
+
+}
+
+@media screen and (max-width:1550px) {
+    .presentacion{
+        width: 90%;
+    }
+    .contacto{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width:1400px) {
+    
+}
+@media screen and (max-width:1200px) {
+    .presentacion{
+        width: 95%;
+    }
+    .contacto{
+        width: 95%;
+    }
+    .presentacion-img-container{
+        height:700px;
+        width: 40%;
+    }
+}
+
+@media screen and (max-width:1050px) {
+                                    /*ABOUT-US Section*/
+
+    .nosotros-principal{
+        height:850px;
+    }
+    .presentacion-img-container{
+        height:900px;
+        width: 50%;
+    }
+
+    .contacto-form{
+        gap: 20px;
+        padding: 20px;
+    }
+}
+@media screen and (max-width: 950px){
+    .contacto{
+        width: 95%;
+        border: 5px solid #000;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width:800px){
+
+}
+@media screen and (max-width:750px){
+    .presentacion-img-container{
+        width: 100%;
+        height: 40%;
+    }
+    .presentacion-img-container img{
+        width: 100%;
+        height: 40%;
+        object-fit: cover;
+        border-top-left-radius: 20px;
+        border-top-right-radius:  20px;
+        border-bottom-left-radius: 0px;
+    }
+    .presentacion{
+        flex-direction: column;
+        border: 5px solid #000;
+    }
+    .presentacion-text-container{
+        width: 90%;
+    }
+    .presentacion-text-container p{
+        font-size: 20px;
+        padding-bottom: 50px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:640px){
+
+}
+
+@media screen and (max-width:550px){
+    .presentacion-text-container{
+        width: 100%;
+    }
+
+    .contacto-form{
+        padding: 7px;
+    }
+    .contacto-trabajo{
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width:450px){ 
+    .nosotros-principal{
+        height:630px;
+    }
+    .presentacion-text-container{
+        gap: 10px;
+    }
+    .presentacion-text-container h2{
+        font-size: 50px;
+        font-family: lobster;
+        text-align: center;
+    }
+    .presentacion-text-container p{
+        font-size: 18px;
+        padding: 20px;
+        text-align: center;
+        
+    }
+}
+
+@media screen and (max-width:350px){ 
+    .nosotros-principal{
+        height:550px;
+    }
+    .presentacion-text-container h2{
+        font-size: 40px;
+    }
+    .presentacion-text-container p{
+        font-size: 16px;
+        padding: 10px;
+        text-align: center;
+        
+    }
+}
