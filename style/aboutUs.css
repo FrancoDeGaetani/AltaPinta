@@ -53,6 +53,7 @@
     background-color: #FAF4E3;
     border-radius: 20px;
     display: flex;
+    border: 5px solid #000;
 }
 .contacto-form{
     display: flex;
@@ -126,10 +127,6 @@ textarea{
 
 /*QUERI SECTION*/
 
-@media screen and (max-width: 1700px) {
-
-}
-
 @media screen and (max-width:1550px) {
     .presentacion{
         width: 90%;
@@ -139,9 +136,6 @@ textarea{
     }
 }
 
-@media screen and (max-width:1400px) {
-    
-}
 @media screen and (max-width:1200px) {
     .presentacion{
         width: 95%;
@@ -156,8 +150,6 @@ textarea{
 }
 
 @media screen and (max-width:1050px) {
-                                    /*ABOUT-US Section*/
-
     .nosotros-principal{
         height:850px;
     }
@@ -168,20 +160,16 @@ textarea{
 
     .contacto-form{
         gap: 20px;
-        padding: 20px;
+        padding: 35px 20px;
     }
 }
 @media screen and (max-width: 950px){
     .contacto{
         width: 95%;
-        border: 5px solid #000;
         flex-direction: column;
     }
 }
 
-@media screen and (max-width:800px){
-
-}
 @media screen and (max-width:750px){
     .presentacion-img-container{
         width: 100%;
@@ -207,10 +195,6 @@ textarea{
         padding-bottom: 50px;
         text-align: center;
     }
-}
-
-@media screen and (max-width:640px){
-
 }
 
 @media screen and (max-width:550px){

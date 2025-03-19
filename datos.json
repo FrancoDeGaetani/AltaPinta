@@ -92,8 +92,8 @@
             "id": 12,
             "nombre": "Bacon King",
             "carne": "pollo",
-            "tip":"simple",
-            "preci":6800,
+            "tipo":"simple",
+            "precio":6800,
             "imgUrl":"../assets/img/hamburguesas/Bacon-King.png"
         },
         {

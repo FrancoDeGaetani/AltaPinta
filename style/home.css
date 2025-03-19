@@ -82,7 +82,7 @@
 
 .menu-principal-container h3{
     font-family: lobster;
-    font-size: 35px;
+    font-size: 40px;
     margin: 10px;
     color: #000;
 }
@@ -90,7 +90,7 @@
 .paty-gusto-nombre-principal{
     text-decoration: underline;
     font-family: bebas-neue;
-    font-size: 25px;
+    font-size: 30px;
     margin-bottom: 0px;
     color: #000;
 }
@@ -101,7 +101,6 @@
     text-wrap: pretty;
     font-size: 18px;
 }
-
 
 .promo-1, .promo-2{
     height: 100%;
@@ -366,11 +365,7 @@
     font-size: 38px;
     }
     .menu-principal-container h3{
-    font-size: 30px;
     margin: 5px;
-    }
-    .paty-gusto-nombre-principal{
-    font-size: 21px;
     }
 
     .paty-gusto-descripcion-principal{
@@ -412,8 +407,6 @@
     padding: 5px 25px;
     font-size: 38px;
     }
-
-
     .menu-principal-container{
     flex-direction: column;
     gap: 0;
@@ -425,6 +418,9 @@
     .container-carrusel-home{
     width: 450px;
     margin: auto;
+    }
+    .menu-principal-container h3{
+        text-align: center;
     }
     /*CREACIONES-SECTION*/
     .creaciones-container{
@@ -571,8 +567,16 @@
     .grid-1{
     display: none;
     }
-    .carne-principal-container h3, .pollo-principal-container h3{
-    text-align: center;
+    .menu-principal-container h3{
+        text-align: center;
+        padding: 10px;
+    }
+    .paty-gusto-nombre-principal{
+        text-align: center;
+    }
+    .paty-gusto-descripcion-principal{
+        font-size: 18px;
+        text-align: center;
     }
     .review-texto{
     width: 90%;
@@ -674,6 +678,13 @@
     .btn-izquierda-review{
     left: 20px;
     }
+    .carne-principal-container h3, .pollo-principal-container h3{
+        font-size: 35px;
+    }
+    .paty-gusto-descripcion-principal{
+        font-size: 18px;
+        text-align: center;
+    }
 
         /*CREACIONES-SECTION*/
 
@@ -722,6 +733,9 @@
     margin: 5px;
     margin-top: 60px;
     width: 170px;
+    }
+    .paty-gusto-nombre-principal{
+        font-size: 25px;
     }
     /*Review-Section */
     .review-container h2 {

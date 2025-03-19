@@ -1,0 +1,449 @@
+.container-carrusel-home{
+    width: 80%;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+}
+.carruseles-promo{
+    width: 200%;
+    height: 100%;
+    display: flex;
+}
+.slider-section-carrusel-promo{
+    width: calc(100% / 2);
+    height: 100%;
+}
+.slider-section-carrusel-promo img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+.btn-izquierda,
+.btn-derecha{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    transform: translate(0,50%);
+    transition: .5s ease;
+    width: 35px;
+    background-color: transparent;
+    color: #FAF4E3;
+    border:none;
+}
+.btn-derecha{
+    right: 10px;
+}
+.btn-izquierda{
+    left: 10px;
+}
+
+.carrucel-home{
+    width: 100%;
+    height: 275px;
+    margin-top: 20px;
+    background-color: #fff;
+}
+
+
+                                        /*MENU-SECTION*/
+.gustos-container{
+    display: flex;
+    gap: 20px;
+    width: 90%;
+    background-color: #FAF4E3;
+    margin: 75px auto;
+    margin-top: 75px;
+    background-color: #960018;
+}
+.columna-carne, .columna-pollo{
+    background-color: #FAF4E3;
+    border: 5px solid #000;
+    width: 100%;
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.gustos-container h3{
+    font-family: lobster;
+    font-size: 50px;
+    margin: 10px;
+    text-align: center;
+}
+.paty-gusto-nombre{
+    text-decoration: underline;
+    font-family: bebas-neue;
+    font-size: 30px;
+}
+.paty-gusto-descripcion{
+    margin-bottom: 12px;
+    color: #000;
+    text-wrap: pretty;
+    font-size: 19px;
+}
+.menu-carrucel{
+    margin: auto;
+}
+.menu-container{
+    width: 85%;
+    margin: auto;
+    margin-bottom: 50px;
+
+}
+.products-ticket-container{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    padding: 20px;
+    border: 2px solid #FAF4E3;
+    border-radius: 10px;
+}
+.menu-lista{
+    padding: 20px;
+    background-color: #FAF4E3;
+    border-radius: 10px;
+    border: 5px solid #000;
+}
+.menu-titulo{
+    background-color: #FAF4E3;
+    border-radius: 10px;
+    margin: auto;
+    padding: 5px;
+    width: 70%;
+    text-align: center;
+    font-size: 50px;
+    font-family: lobster;
+}
+.nav-bar-label{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+.nav-bar-input{
+    width: 50%;
+    padding: 10px;
+    font-size: 20px;
+    background-color: #FAF4E3;
+    border: 2px solid #960018;
+    border-radius: 10px;
+}
+.lista-menu-items{
+    margin-top: 30px;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 30px;
+}
+.lista-menu-items li{
+    list-style: none;
+}
+.lista-menu-items li button{
+    font-family: bebas-neue;
+    margin: auto;
+    padding: 5px;
+    width: 200px;
+    font-size: 25px;
+    background-color: #FAF4E3;
+    border: 2px solid #960018;
+    border-radius: 5px;
+    cursor: pointer;
+    line-height: normal;
+}
+.lista-menu-items li button:hover{
+    color: #FAF4E3;
+    background-color: #960018;
+    border: 2px solid #000;
+    border-radius: 5px;
+}
+
+
+                                /*PRODUCTOS-MENU SECTION*/
+.products-ticket-container{
+    background-color: #FAF4E3;
+    border: 5px solid #000;
+}
+#productos-container{
+    display: grid;
+    grid-template-columns: repeat(4, 300px);
+    grid-template-rows: auto;
+    gap: 20px;
+}
+.producto-container{
+    background-color: #FAF4E3;
+    border: 2px solid #960018;
+    border-radius: 10px;
+    padding: 10px;
+
+}
+.card-paty-img{
+    width: 100%;
+    height: 100%;
+}
+
+.card-paty-img-container{
+    width: 100%;
+    height: 245px;
+    margin: auto;
+}
+                                    /*CARDS-PATYS*/
+.card-paty{
+    display: flex;
+    width: 80%;
+    margin: 50px auto;
+    gap: 15px;
+}
+.paty-nombre{
+    text-align: center;
+    font-family: bebas-neue;
+    font-size: 30px;
+}
+.paty-precio-suma{
+    display: flex;
+    justify-content: space-around;
+}
+.paty-precio{
+    font-family: lobster;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.paty-suma button{
+    border-radius: 10px;
+    border: 2px solid #960018;
+    background-color: #FAF4E3;
+    color: #960018;
+    padding: 2px 9px;
+}
+.paty-suma .resto{
+    padding: 2px 11px;
+}
+.ocultar-paty{
+    display: none;
+}
+                            /*PRODUCTO CARRITO SECTION*/
+
+.carrito-container{
+    background-color: #FAF4E3;
+    height: auto;
+    padding: 15px;
+    border: 2px solid #960018;
+    border-radius: 10px;
+}
+
+.titulo-carrito{
+    text-align: center;
+    font-size: 50px;
+    font-family: lobster;
+}
+
+#carro{
+    margin-top: 30px;
+    font-size: 17px;
+    background-color: transparent;
+    padding: 3px;
+    margin: 20px auto;
+}
+
+.li-pedido{
+    list-style: none;
+    margin: 15px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 5px;
+    font-family: bebas-neue;
+    font-size: 20px;
+}
+
+.quitar-del-carrito{
+    width: 100%;
+    color: #960018;
+    background-color: transparent;
+    border: 1px solid #960018;
+    padding: 2px;
+}
+
+#total{
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+    font-family: lobster;
+    font-size: 35px;
+}
+
+#limpiar-carrito, #confirmar-pedidos{
+    width: 100%;
+    font-size: 17px;
+    color: #960018;
+    background-color: transparent;
+    border: 1px solid #960018;
+    padding: 3px;
+    margin: 20px auto;
+}
+
+
+
+/*QUERI SECTION*/
+
+@media screen and (max-width:1550px) {
+
+    .gustos-container{
+        width: 95%;
+    }
+    .menu-container{
+        width: 95%;
+    }
+}
+
+@media screen and (max-width:1400px) {
+    .container-carrusel-home{
+        width: 100%;
+    }
+    #productos-container{
+        grid-template-columns: repeat(3, 300px);
+        gap: 20px;
+    }
+}
+@media screen and (max-width:1200px) {
+    .gustos-container{
+        gap: 10px;
+    }
+    .columna-carne, .columna-pollo{
+        padding: 15px;
+    }
+    .products-ticket-container{
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width:1050px) {
+    .columna-carne, .columna-pollo{
+        padding: 25px;
+    }
+    .gustos-container h3{
+        font-family: lobster;
+        font-size: 50px;
+        margin-bottom: 25px;
+    }
+    .paty-gusto-nombre{
+        font-size: 35px;
+        text-align: center;
+    }
+    .paty-gusto-descripcion{
+        margin-bottom: 19px;
+        color: #000;
+        text-wrap: pretty;
+        font-size: 21px;
+        text-align: center;
+    }
+    .gustos-container{
+        flex-direction: column;
+    }
+    .gustos-container{
+        width: 85%;
+    }
+    .container-carrusel-home{
+        width: 70%;
+    }
+    #productos-container{
+        grid-template-columns: repeat(2, 300px);
+        gap: 50px;
+    }
+    .products-ticket-container{
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .lista-menu-items {
+        gap: 0;
+    }
+
+}
+@media screen and (max-width: 950px){
+
+    .container-carrusel-home{
+        width: 80%;
+    }
+    .menu-titulo {
+        width: 100%;
+    }
+    .lista-menu-items{
+        width: 75%;
+        flex-wrap: wrap;
+        margin: 25px auto;
+        gap: 10px;
+    }
+    .nav-bar-input {
+        width: 70%;
+    }
+    #productos-container{
+        gap: 25px;
+    }
+}
+
+@media screen and (max-width:800px){
+    .gustos-container{
+        width: 90%;
+    }
+    .container-carrusel-home{
+        width: 90%;
+    }
+    #productos-container{
+        gap: 10px;
+    }
+    .nav-bar-input {
+        width: 85%;
+    }
+
+}
+
+
+@media screen and (max-width:710px){
+    #productos-container{
+        grid-template-columns: repeat(1, 400px);
+        gap: 20px;
+    }
+    .card-paty-img-container {
+        width: 100%;
+        height: 370px;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width:640px){
+    .gustos-container{
+        width: 95%;
+    }
+    .container-carrusel-home{
+        width: 100%;
+    }
+    .lista-menu-items{
+        width: 100%;
+        gap: 20px;
+    }
+    .nav-bar-input {
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width:550px){
+    #productos-container{
+        grid-template-columns: repeat(1, 300px);
+    }
+    .card-paty-img-container {
+        height: 270px;
+    }
+}
+
+@media screen and (max-width:400px){ 
+    #productos-container{
+        grid-template-columns: repeat(1, 270px);
+    }
+    .card-paty-img-container {
+        height: 230px;
+    }
+}

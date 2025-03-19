@@ -7,17 +7,19 @@
 
 //Variable en donde se van a estar guardando los pedidos
 const PEDIDOS =  JSON.parse(localStorage.getItem('carrito')) || [];
+let productosGlobales = [];
 
 const MENU_PARRILLA= document.getElementById('menu-parrilla')
 const MENU_POLLO = document.getElementById('menu-pollo')
 const MENU_ACOMPANAMIENTOS= document.getElementById('menu-acompañamientos')
 const MENU_BEBIDAS = document.getElementById('menu-bebidas')
 const BUSCADOR = document.getElementById('buscador')
+const divProductos = document.getElementById("productos-container");
 
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    misProductos();  
+    cargarProductos();  
     renderizarCarrito(); 
     alertaUsuario ();
     guardarDatos(alertaUsuario ());
@@ -35,80 +37,67 @@ function guardarDatos(nombre, direccion) {
     return{ nombre, direccion }
 }
 
-// funcion asincrona para mostrar los productos guardados en el archivo datos.json
-async function misProductos(){
-    try{
-        const response= await fetch ('../datos.json');
+// Cargar productos y filtrar por categoría
+async function cargarProductos() {
+    try {
+        const response = await fetch('../datos.json');
         const dataJson = await response.json();
-        const nombreProducto = dataJson.productos;
-        const divProductos = document.getElementById ("productos-container");
+        const productos = dataJson.productos;
+        productosGlobales = dataJson.productos;
 
-        nombreProducto.forEach(producto=>{
-            const div = document.createElement ('div');
-            div.classList.add ("producto-container");
-            div.innerHTML = 
-            `               
-                            <h5 class="paty-nombre">${producto.nombre}</h5>
-                            <div class="card-paty-img-container">
-                                <img src=${producto.imgUrl} alt="" class="card-paty-img">
-                            </div>
-                            <div class="precio-paty-container">
-                                <p class="paty-precio"> $ ${producto.precio}</p>
-                            </div>
-                            <div class="paty-precio-suma">
-                                <div class="paty-suma">
-                                    <button onclick="agregarAlCarrito(${producto.id})" class="suma">Agregar Al Carrito</button>
-                                    <button onclick="quitarDelCarrito(${producto.id})" class="resto">-</button>
-                                </div>
-                            </div>
-            `;
-            divProductos.appendChild(div)
-        })
+        mostrarProductos(productos);
 
-    }catch(error){
-        console.log('error')
+        MENU_PARRILLA.addEventListener("click", () => filtrarProductos(productos, "vacuna"));
+        MENU_POLLO.addEventListener("click", () => filtrarProductos(productos, "pollo"));
+        MENU_ACOMPANAMIENTOS.addEventListener("click", () => filtrarProductos(productos, "acompañamientos"));
+        MENU_BEBIDAS.addEventListener("click", () => filtrarProductos(productos, "bebidas"));
+        BUSCADOR.addEventListener("input", buscarProductos);
+    } catch (error) {
+        console.log("Error al cargar productos:", error);
     }
 }
 
-async function buscerProductos(){
-    const response= await fetch ('../datos.json');
-    const dataJson = await response.json();
-    const nombreProducto = dataJson.productos;
-    const divProductos = document.getElementById ("productos-container");
-
-    function mostrarProductos(productosFiltrados) {
-        divProductos.innerHTML = ""; // Limpiar el contenedor
-        productosFiltrados.forEach(producto => {
-            const div = document.createElement("div");
-            div.classList.add("producto-container");
-            div.innerHTML = `
-                            <h5 class="paty-nombre">${producto.nombre}</h5>
-                            <div class="card-paty-img-container">
-                                <img src=${producto.imgUrl} alt="" class="card-paty-img">
-                            </div>
-                            <div class="precio-paty-container">
-                                <p class="paty-precio"> $ ${producto.precio}</p>
-                            </div>
-                            <div class="paty-precio-suma">
-                                <div class="paty-suma">
-                                    <button onclick="agregarAlCarrito(${producto.id})" class="suma">Agregar Al Carrito</button>
-                                    <button onclick="quitarDelCarrito(${producto.id})" class="resto">-</button>
-                                </div>
-                            </div>
-            `;
-            contenedorProductos.appendChild(div);
-        });
-    }
-
-    mostrarProductos(nombreProducto);
-
-    // Evento para filtrar productos de la categoría "Ropa"
-    MENU_PARRILLA.addEventListener("click", () => {
-        const productosFiltrados = nombreProducto.filter(producto => producto.carne === "vacuna");
-        mostrarProductos(productosFiltrados);
+// Mostrar productos en pantalla
+function mostrarProductos(productos) {
+    divProductos.innerHTML = "";
+    productos.forEach(producto => {
+        const div = document.createElement("div");
+        div.classList.add("producto-container");
+        div.innerHTML = `
+            <h5 class="paty-nombre">${producto.nombre}</h5>
+            <div class="card-paty-img-container">
+                <img src=${producto.imgUrl} alt="" class="card-paty-img">
+            </div>
+            <div class="precio-paty-container">
+                <p class="paty-precio"> $ ${producto.precio}</p>
+            </div>
+            <div class="paty-precio-suma">
+                <div class="paty-suma">
+                    <button onclick="agregarAlCarrito(${producto.id})" class="suma">Agregar Al Carrito</button>
+                    <button onclick="quitarDelCarrito(${producto.id})" class="resto">-</button>
+                </div>
+            </div>
+        `;
+        divProductos.appendChild(div);
     });
-
 }
+
+
+// Filtrar productos por tipo de carne
+function filtrarProductos(productos, tipoCarne) {
+    const productosFiltrados = productos.filter(producto => producto.carne === tipoCarne);
+    mostrarProductos(productosFiltrados);
+}
+
+// Función de búsqueda en tiempo real
+function buscarProductos() {
+    const textoBusqueda = BUSCADOR.value.toLowerCase();
+    const productosFiltrados = productosGlobales.filter(producto =>
+        producto.nombre.toLowerCase().includes(textoBusqueda)
+    );
+    mostrarProductos(productosFiltrados);
+}
+
 
 //Funcion para agregar esas hamburguesas al carrito
 function agregarAlCarrito(id){
