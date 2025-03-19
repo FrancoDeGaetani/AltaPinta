@@ -1,37 +1,37 @@
 {
     "usuarios":[
         {
-            "perfil_foto": "../assets/img/clientes/person-2.jpg",
+            "perfil_foto": "./assets/img/clientes/person-2.jpg",
             "usuario": "Fakku",
             "hamburguesa_resena" : "Stacker Doble",
             "resena_texto": "Una hamburguesa irresistible con doble carne a la parrilla, crujiente tocino, queso derretido y pan suave. Ideal para los amantes de sabores intensos y abundantes."
         },
         {
-            "perfil_foto": "../assets/img/clientes/persona-1.jpg",
+            "perfil_foto": "./assets/img/clientes/persona-1.jpg",
             "usuario": "LucasGabi_22",
             "hamburguesa_resena" : "Hamburguesa Clasica",
             "resena_texto": "Es simple, pero impecable en su ejecución. Ideal para los amantes de lo clásico."
         }, 
         {
-            "perfil_foto": "../assets/img/clientes/persona-3.jpg",
+            "perfil_foto": "./assets/img/clientes/persona-3.jpg",
             "usuario": "Martin",
             "hamburguesa_resena" : "Melt de pollo con salsa Stacker",
             "resena_texto": "Un pollo crujiente con doble queso cheddar, bañado en una salsa especial que le da un toque cremoso y ahumado. Lo que más me gustó es el pan tostado, que le da una textura única."
         }, 
         {
-            "perfil_foto": "../assets/img/clientes/persona-4.jpg",
+            "perfil_foto": "./assets/img/clientes/persona-4.jpg",
             "usuario": "Fran_Mazza",
             "hamburguesa_resena" : "Bacon King",
             "resena_texto": "¡Una bomba de sabor! Dos jugosas carnes a la parrilla, con queso cheddar derretido que se funde en cada bocado y una buena cantidad de bacon crujiente. Todo esto va en un pan brioche doradito y untado con salsa."
         },
         {
-            "perfil_foto": "../assets/img/clientes/persona-6.jpg",
+            "perfil_foto": "./assets/img/clientes/persona-6.jpg",
             "usuario": "KitoLopez",
             "hamburguesa_resena" : "Crispy chicken",
             "resena_texto": "Esta hamburguesa de pollo es una maravilla. El pan con semillas de sésamo es crujiente, el pollo frito es jugoso y crujiente, y las capas de lechuga, tomate, pepinillos y cebolla añaden una frescura perfecta."
         }, 
         {
-            "perfil_foto": "../assets/img/clientes/persona-8.jpg",
+            "perfil_foto": "./assets/img/clientes/persona-8.jpg",
             "usuario": "LulaRising",
             "hamburguesa_resena" : "Cheese Onion",
             "resena_texto": "Esta hamburguesa es una delicia. El pan con semillas de sésamo es crujiente, el queso cheddar derretido se funde sobre la jugosa carne con marcas de parrilla, y las cebollas caramelizadas aportan un dulzor perfecto. ¡Totalmente recomendada!"
