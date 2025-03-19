@@ -14,7 +14,7 @@ let translateReviwe = 0,
 
 async function carrucelHome() {
     try{
-        const response = await fetch('../usuarios.json')
+        const response = await fetch('./usuarios.json')
         const dataUsuario = await response.json();
         const nombreUsuario= dataUsuario.usuarios;
         const divCarrucelHome = document.getElementById('carrucel-reviews')
