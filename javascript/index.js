@@ -72,10 +72,8 @@ function mostrarProductos(productos) {
                 <p class="paty-precio"> $ ${producto.precio}</p>
             </div>
             <div class="paty-precio-suma">
-                <div class="paty-suma">
-                    <button onclick="agregarAlCarrito(${producto.id})" class="suma">Agregar Al Carrito</button>
-                    <button onclick="quitarDelCarrito(${producto.id})" class="resto">-</button>
-                </div>
+                <button onclick="agregarAlCarrito(${producto.id})" class="suma">Agregar al Carrito</button>
+                <button onclick="quitarDelCarrito(${producto.id})" class="resto">Eliminar del Carrito</button>
             </div>
         `;
         divProductos.appendChild(div);
@@ -100,55 +98,73 @@ function buscarProductos() {
 
 
 //Funcion para agregar esas hamburguesas al carrito
-function agregarAlCarrito(id){
-    PEDIDOS
-    const PRODUCTO = productos.find(item => item.id === id);
-    const PRODUCTOENCARRITO= PEDIDOS.find(item => item.id === id);
+async function agregarAlCarrito(id){
+    try{
+        const response = await fetch('../datos.json');
+        const dataJson = await response.json();
+        const productos = dataJson.productos;
+        PEDIDOS
+        const PRODUCTO = productos.find(item => item.id === id);
+        const PRODUCTOENCARRITO= PEDIDOS.find(item => item.id === id);
 
-    if(PRODUCTOENCARRITO){//Aumenta la cantidad de hamburguesas en uno 
-        PRODUCTOENCARRITO.cantidad +=1;
-    }else{
-        PEDIDOS.push({...PRODUCTO, cantidad: 1}) 
+        if(PRODUCTOENCARRITO){//Aumenta la cantidad de hamburguesas en uno 
+            PRODUCTOENCARRITO.cantidad +=1;
+        }else{
+            PEDIDOS.push({...PRODUCTO, cantidad: 1}) 
+        }
+        Toastify({
+            text: `${PRODUCTO.nombre}, agregado correctamente al carrito.`,
+            duration: 2000,
+            style: 
+                { background: "#FAF4E3",
+                color: "#960018" }
+            }).showToast();
+        guardarEnLocalStorage()
+        renderizarCarrito()
     }
-    Toastify({
-        text: `${PRODUCTO.nombre}, agregado correctamente al carrito.`,
-        duration: 2000,
-        style: 
-            { background: "#FAF4E3",
-            color: "#960018" }
-        }).showToast();
-    guardarEnLocalStorage()
-    renderizarCarrito()
+    catch(error){
+        console.error(error);
+        alert(error.message);
+    }
+    
 }
 
 
 //Funcion para quitar las hamburguesas del carrito
-function quitarDelCarrito(id) {
-    PEDIDOS
+async function quitarDelCarrito(id) {
+    try{
+        const response = await fetch('../datos.json');
+        const dataJson = await response.json();
+        const productos = dataJson.productos;
+        PEDIDOS
 
-    if (!Array.isArray(PEDIDOS)) {//if creado para asegurarme de tener siempre un carrito
-        PEDIDOS = [];
-    }
-    const PRODUCTO = productos.find(item => item.id === id);
-    const index = PEDIDOS.findIndex(item => item.id === id);
-
-    if (index !== -1) { //quita UNA sola hamburguesa si tiene mas de dos hamburguesas iguales en el pedido 
-        if (PEDIDOS[index].cantidad > 1) {
-            PEDIDOS[index].cantidad -= 1;
-        } else { //de haber una sola hamburguesa se eliminara el pedido entero del array
-            PEDIDOS.splice(index, 1);
+        if (!Array.isArray(PEDIDOS)) {//if creado para asegurarme de tener siempre un carrito
+            PEDIDOS = [];
         }
+        const PRODUCTO = productos.find(item => item.id === id);
+        const index = PEDIDOS.findIndex(item => item.id === id);
+
+        if (index !== -1) { //quita UNA sola hamburguesa si tiene mas de dos hamburguesas iguales en el pedido 
+            if (PEDIDOS[index].cantidad > 1) {
+                PEDIDOS[index].cantidad -= 1;
+            } else { //de haber una sola hamburguesa se eliminara el pedido entero del array
+                PEDIDOS.splice(index, 1);
+            }
+        }
+        Toastify({
+            text: `${PRODUCTO.nombre}, se a eliminado del carrito.`,
+            duration: 2000,
+            style: 
+                { background: "#960018",
+                color: "#FAF4E3" }
+            }).showToast();
+        guardarEnLocalStorage();
+        renderizarCarrito();
     }
-    Toastify({
-        text: `${PRODUCTO.nombre}, se a eliminado del carrito.`,
-        duration: 2000,
-        style: 
-            { background: "#960018",
-            color: "#FAF4E3" }
-        }).showToast();
-    guardarEnLocalStorage();
-    renderizarCarrito();
-}
+    catch(error){
+        console.error(error);
+        alert(error)
+}}
 
 
 //Funcion creada para eliminar el carrito entero sin necesidad de eliminar uno por uno los pedidos 
@@ -211,26 +227,29 @@ document.getElementById('confirmar-pedidos').addEventListener('click', hacerPedi
 //Funcion para renbderizar el carrito y sea visible
 function renderizarCarrito() {
     PEDIDOS
-
-    const carritoList = document.getElementById('carro');
+    const carritoStorage = localStorage.getItem('carrito');
+    const carritoList = document.getElementById('carrito');
     carritoList.innerHTML = ''; 
     let total = 0;
-
-    //Lista del carrito de productos ya seleccionados
-    PEDIDOS.forEach((producto, index) => {
-        let li = document.createElement ('li')
-        li.className = 'li-pedido'
-        li.innerHTML = `
-                            ${producto.nombre} - ${producto.cantidad}
-                            <button onclick="quitarDelCarrito(${producto.id})" class="quitar-del-carrito">Eliminar</button>
-        `;
-        carritoList.appendChild(li);
-        total += producto.precio * producto.cantidad
+    if (carritoStorage && PEDIDOS.length > 0) {  //Lista del carrito de productos ya seleccionados
+            PEDIDOS.forEach((producto, index) => {
+            let li = document.createElement ('li')
+            li.className = 'li-pedido'
+            li.innerHTML = `
+                                <div> <p>Nombre: ${producto.nombre}</p> <p>Cantidad: ${producto.cantidad} </p></div>
+                                <button onclick="quitarDelCarrito(${producto.id})" class="quitar-del-carrito">Eliminar</button>
+            `;
+            carritoList.appendChild(li);
+            total += producto.precio * producto.cantidad
+            
     });
+        document.getElementById('total').textContent = `El Total = $${total}`//Muestras el total a pagar del pedido
 
-    document.getElementById('total').textContent = `El Total = $${total}`//Muestras el total a pagar del pedido
-    
+    }else{  
+        document.getElementById('total').textContent = `El Carrito esta vacio :(`
+    }
 }
+
 
 // SWEET ALERT
 //funcion que recopila los datos de el usuario al entrar a la pagina 

@@ -12,7 +12,7 @@ let translate = 0,
 
     setInterval(() => {
         moverDerecha()
-    }, 5000);
+    }, 7000);
     
 
 function moverDerecha (){
