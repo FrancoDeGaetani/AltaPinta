@@ -149,10 +149,15 @@
     top: 50%;
     transform: translate(0,50%);
     transition: .5s ease;
+    transition: color .2s ease;
     width: 35px;
     background-color: transparent;
     color: #FAF4E3;
     border:none;
+}
+.btn-izquierda:hover,
+.btn-derecha:hover{
+    color: #960018;
 }
 .btn-derecha{
     right: 10px;
@@ -256,12 +261,17 @@
     top: 40%;
     cursor: pointer;
     transition: .5s ease;
+    transition: color .2s ease;
     user-select: none;
     width: 40px;
     justify-content: center;
     background-color: transparent;
     color: #960018;
     border:none;
+}
+.btn-izquierda-review:hover,
+.btn-derecha-review:hover{
+    color: #000;
 }
 .btn-derecha-review{
     right: 50px;

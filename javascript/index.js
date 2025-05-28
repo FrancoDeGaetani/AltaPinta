@@ -17,6 +17,13 @@ const BUSCADOR = document.getElementById('buscador')
 const divProductos = document.getElementById("productos-container");
 
 
+//Evento creado para que funcione limpiarCarrito
+document.getElementById('limpiar-carrito').addEventListener('click', limpiarCarrito);
+
+//evento para ejecutar la funcion de hacerPedidos
+document.getElementById('confirmar-pedidos').addEventListener('click', hacerPedidido )
+
+
 
 document.addEventListener('DOMContentLoaded', () => {
     cargarProductos();  
@@ -66,14 +73,14 @@ function mostrarProductos(productos) {
         div.innerHTML = `
             <h5 class="paty-nombre">${producto.nombre}</h5>
             <div class="card-paty-img-container">
-                <img src=${producto.imgUrl} alt="" class="card-paty-img">
+                <img src=${producto.imgUrl} alt="${producto.descripcion}" class="card-paty-img">
             </div>
             <div class="precio-paty-container">
                 <p class="paty-precio"> $ ${producto.precio}</p>
             </div>
             <div class="paty-precio-suma">
-                <button onclick="agregarAlCarrito(${producto.id})" class="suma">Agregar al Carrito</button>
-                <button onclick="quitarDelCarrito(${producto.id})" class="resto">Eliminar del Carrito</button>
+                <button onclick="agregarAlCarrito(${producto.id})" class="suma"  aria-label="Agregar al carrito">Agregar al Carrito</button>
+                <button onclick="quitarDelCarrito(${producto.id})" class="resto"  aria-label="Eliminar del Carrito">Eliminar del Carrito</button>
             </div>
         `;
         divProductos.appendChild(div);
@@ -107,7 +114,7 @@ async function agregarAlCarrito(id){
         const PRODUCTO = productos.find(item => item.id === id);
         const PRODUCTOENCARRITO= PEDIDOS.find(item => item.id === id);
 
-        if(PRODUCTOENCARRITO){//Aumenta la cantidad de hamburguesas en uno 
+        if(PRODUCTOENCARRITO){
             PRODUCTOENCARRITO.cantidad +=1;
         }else{
             PEDIDOS.push({...PRODUCTO, cantidad: 1}) 
@@ -138,26 +145,35 @@ async function quitarDelCarrito(id) {
         const productos = dataJson.productos;
         PEDIDOS
 
-        if (!Array.isArray(PEDIDOS)) {//if creado para asegurarme de tener siempre un carrito
+        if (!Array.isArray(PEDIDOS)) {
             PEDIDOS = [];
         }
         const PRODUCTO = productos.find(item => item.id === id);
         const index = PEDIDOS.findIndex(item => item.id === id);
 
-        if (index !== -1) { //quita UNA sola hamburguesa si tiene mas de dos hamburguesas iguales en el pedido 
+        if (index !== -1) { 
             if (PEDIDOS[index].cantidad > 1) {
                 PEDIDOS[index].cantidad -= 1;
-            } else { //de haber una sola hamburguesa se eliminara el pedido entero del array
+            } else { 
                 PEDIDOS.splice(index, 1);
             }
+            Toastify({
+                text: `${PRODUCTO.nombre}, se a eliminado del carrito.`,
+                duration: 2000,
+                style: 
+                    { background: "#960018",
+                    color: "#FAF4E3" }
+                }).showToast();
+        }else{
+            Toastify({
+                text: `${PRODUCTO.nombre}, no se encuentra en el carrito.`,
+                duration: 2000,
+                style: 
+                    { background: "#960018",
+                    color: "#FAF4E3" }
+                }).showToast();
         }
-        Toastify({
-            text: `${PRODUCTO.nombre}, se a eliminado del carrito.`,
-            duration: 2000,
-            style: 
-                { background: "#960018",
-                color: "#FAF4E3" }
-            }).showToast();
+        
         guardarEnLocalStorage();
         renderizarCarrito();
     }
@@ -169,14 +185,27 @@ async function quitarDelCarrito(id) {
 
 //Funcion creada para eliminar el carrito entero sin necesidad de eliminar uno por uno los pedidos 
 function limpiarCarrito (){
-    PEDIDOS.splice(0, PEDIDOS.length);
-    Toastify({
+    
+
+    if(PEDIDOS.length === 0){
+        Toastify({
+            text: `El carrito esta vacío.`,
+            duration: 2000,
+            style: 
+                { background: "#960018",
+                color: "#FAF4E3" }
+            }).showToast();
+    }else{
+        PEDIDOS.splice(0, PEDIDOS.length);
+        Toastify({
         text: `El carrito se ah eliminado.`,
         duration: 2000,
         style: 
             { background: "#960018",
             color: "#FAF4E3" }
         }).showToast();
+    }
+    
 
     renderizarCarrito();
     guardarEnLocalStorage();
@@ -186,43 +215,6 @@ function limpiarCarritoSinAlerta(){
     PEDIDOS.splice(0, PEDIDOS.length);
     guardarEnLocalStorage();
 }
-
-//Evento creado para que funcione limpiarCarrito
-document.getElementById('limpiar-carrito').addEventListener('click', limpiarCarrito);
-
-//funcion asincrona para poder hacer el pedido solo si se tiene los datos del usuario
-async function hacerPedidido(){
-
-    try { 
-        const nombre = localStorage.getItem('nombre');
-        const direccion = localStorage.getItem('direccion');
-
-        if (!nombre || nombre === 'undefined' || nombre.trim() === '' || !direccion || direccion === 'undefined' || direccion.trim() === ''){ 
-            await Swal.fire({ 
-                width:'600px',
-                icon: "error",
-                title: "Oops... Al parecer no completaste los datos!",
-                background:'#FAF4E3',
-                text: "Actualiza la pagina para poder hacer el pedido!",});
-
-            } else { 
-                Swal.fire({
-                    width:'600px',
-                    icon: "success",
-                    title: "El pedido fue hecho!",
-                    background:'#FAF4E3',
-                    text: "Muchas gracias por confiar en nosotros!",
-                });
-                limpiarCarritoSinAlerta();
-                renderizarCarrito();} 
-        }
-            catch(error){ 
-                console.error(error);
-                alert(error.message);}
-}
-
-//evento para ejecutar la funcion de hacerPedidos
-document.getElementById('confirmar-pedidos').addEventListener('click', hacerPedidido )
 
 //Funcion para renbderizar el carrito y sea visible
 function renderizarCarrito() {
@@ -237,7 +229,7 @@ function renderizarCarrito() {
             li.className = 'li-pedido'
             li.innerHTML = `
                                 <div> <p>Nombre: ${producto.nombre}</p> <p>Cantidad: ${producto.cantidad} </p></div>
-                                <button onclick="quitarDelCarrito(${producto.id})" class="quitar-del-carrito">Eliminar</button>
+                                <button onclick="quitarDelCarrito(${producto.id})" class="quitar-del-carrito" aria-label="Eliminar del Carrito">Eliminar</button>
             `;
             carritoList.appendChild(li);
             total += producto.precio * producto.cantidad
@@ -246,12 +238,13 @@ function renderizarCarrito() {
         document.getElementById('total').textContent = `El Total = $${total}`//Muestras el total a pagar del pedido
 
     }else{  
-        document.getElementById('total').textContent = `El Carrito esta vacio :(`
+        document.getElementById('total').textContent = `El Carrito esta vacío :(`
     }
 }
 
 
 // SWEET ALERT
+
 //funcion que recopila los datos de el usuario al entrar a la pagina 
 function alertaUsuario (){
     Swal.fire({
@@ -283,4 +276,38 @@ function alertaUsuario (){
                 `
             });
     }});
+}
+
+//funcion asincrona para poder hacer el pedido solo si se tiene los datos del usuario
+async function hacerPedidido(){
+
+    try { 
+        const nombre = localStorage.getItem('nombre');
+        const direccion = localStorage.getItem('direccion');
+
+        if (!nombre || nombre === 'undefined' || nombre.trim() === '' || !direccion || direccion === 'undefined' || direccion.trim() === ''){ 
+            await Swal.fire({ 
+                width:'600px',
+                icon: "error",
+                title: "Oops... Al parecer no completaste los datos!",
+                background:'#FAF4E3',
+                text: "Actualiza la pagina para poder hacer el pedido!",});
+
+            } else { 
+                Swal.fire({
+                    width:'600px',
+                    icon: "success",
+                    title: "El pedido fue hecho!",
+                    background:'#FAF4E3',
+                    text: "Muchas gracias por confiar en nosotros!",
+                });
+
+            limpiarCarritoSinAlerta();
+            renderizarCarrito();} 
+
+        }
+
+            catch(error){ 
+                console.error(error);
+                alert(error.message);}
 }

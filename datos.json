@@ -6,7 +6,8 @@
             "carne": "vacuna",
             "tipo":"doble",
             "precio":7000,
-            "imgUrl":"../assets/img/hamburguesas/bacon-king-carne.png"
+            "imgUrl":"../assets/img/hamburguesas/bacon-king-carne.png",
+            "descripcion":"Dos medallones de carne, pan, queso cheddar, panceta, ketchup y mostaza."
         },
         {
             "id": 2,
@@ -14,7 +15,8 @@
             "carne": "vacuna",
             "tipo":"doble",
             "precio":6000,
-            "imgUrl":"../assets/img/hamburguesas/Cheese-Onion.png"
+            "imgUrl":"../assets/img/hamburguesas/Cheese-Onion.png",
+            "descripcion":"Carne a la parrilla tamaño Whopper, pan, salsa cheddar, cebolla rehogada."
         },
         {
             "id": 3,
@@ -22,7 +24,8 @@
             "carne": "vacuna",
             "tipo":"doble",
             "precio":6500,
-            "imgUrl":"../assets/img/hamburguesas/Doble-Jamon-y-Queso.png"
+            "imgUrl":"../assets/img/hamburguesas/Doble-Jamon-y-Queso.png",
+            "descripcion":""
         },
         {
             "id": 4,
@@ -30,7 +33,8 @@
             "carne": "vacuna",
             "tipo":"simple",
             "precio":4000,
-            "imgUrl":"../assets/img/hamburguesas/Hamburguesa-clásica.png"
+            "imgUrl":"../assets/img/hamburguesas/Hamburguesa-clásica.png",
+            "descripcion":"clásica Carne a la parrilla, pan, tomate, lechuga, mostaza y ketchup. Se llama clásica porque nunca pasa de moda"
         },
         {
             "id": 5,
@@ -38,7 +42,8 @@
             "carne": "vacuna",
             "tipo":"doble",
             "precio":6250,
-            "imgUrl":"../assets/img/hamburguesas/Melt-con-Salsa-Stacker.png"
+            "imgUrl":"../assets/img/hamburguesas/Melt-con-Salsa-Stacker.png",
+            "descripcion":"Carne a la parrilla con cebolla rehogada y el cheddar más meltoso que vas a ver. Todo entre dos panes molde tostados."
         },
         {
             "id": 6,
@@ -46,7 +51,8 @@
             "carne": "vacuna",
             "tipo":"doble",
             "precio":7000,
-            "imgUrl":"../assets/img/hamburguesas/Stacker-Doble.png"
+            "imgUrl":"../assets/img/hamburguesas/Stacker-Doble.png",
+            "descripcion":"2 carnes a la parri, salsa stacker, pan, queso cheddar, panceta. Tranki pero potente."
         },
         {
             "id": 7,
@@ -54,7 +60,8 @@
             "carne": "vacuna",
             "tipo":"triple",
             "precio":8500,
-            "imgUrl":"../assets/img/hamburguesas/Stacker-Triple.png"
+            "imgUrl":"../assets/img/hamburguesas/Stacker-Triple.png",
+            "descripcion":"3 carnes a la parrilla, salsa stacker, pan, queso cheddar, panceta. Muy potente."
         },
         {
             "id": 8,
@@ -62,7 +69,8 @@
             "carne": "vacuna",
             "tipo":"cuadruple",
             "precio":10000,
-            "imgUrl":"../assets/img/hamburguesas/Stacker-Cuadruple.png"
+            "imgUrl":"../assets/img/hamburguesas/Stacker-Cuadruple.png",
+            "descripcion":"4 carnes a la parrilla, salsa stacker, pan, queso cheddar, panceta. Muy muy potente."
         },
         {
             "id": 9,
@@ -70,7 +78,8 @@
             "carne": "vacuna",
             "tipo":"simple",
             "precio":6500,
-            "imgUrl":"../assets/img/hamburguesas/Whopper-Extreme.png"
+            "imgUrl":"../assets/img/hamburguesas/Whopper-Extreme.png",
+            "descripcion":"Un sabor extremo con carne a la parrilla, queso, panceta, cebolla, pepino, kétchup, lechuga, tomate y mayonesa."
         },
         {
             "id": 10,
@@ -78,7 +87,8 @@
             "carne": "vacuna",
             "tipo":"doble",
             "precio":7500,
-            "imgUrl":"../assets/img/hamburguesas/Whopper-Extreme-doble.png"
+            "imgUrl":"../assets/img/hamburguesas/Whopper-Extreme-doble.png",
+            "descripcion":"Un sabor extremo con doble carne a la parrilla, queso, panceta, cebolla, pepino, kétchup, lechuga, tomate y mayonesa."
         },
         {
             "id": 11,
@@ -86,7 +96,8 @@
             "carne": "vacuna",
             "tipo":"doble",
             "precio":7800,
-            "imgUrl":"../assets/img/hamburguesas/Whopper-Guacamole.png"
+            "imgUrl":"../assets/img/hamburguesas/Whopper-Guacamole.png",
+            "descripcion":"Pan, carne a la parrilla, lechuga, tomate, cebolla, pepino, mayonesa y guacamole"
         },
         {
             "id": 12,
@@ -94,7 +105,8 @@
             "carne": "pollo",
             "tipo":"simple",
             "precio":6800,
-            "imgUrl":"../assets/img/hamburguesas/Bacon-King.png"
+            "imgUrl":"../assets/img/hamburguesas/Bacon-King.png",
+            "descripcion":"Dos medallones de carne a la parrilla, pan, queso cheddar, panceta, ketchup y mostaza. BACON-toda"
         },
         {
             "id": 13,
@@ -102,7 +114,8 @@
             "carne": "pollo",
             "tipo":"simple",
             "precio":7200,
-            "imgUrl":"../assets/img/hamburguesas/Crispy-Chicken-Pepino.png"
+            "imgUrl":"../assets/img/hamburguesas/Crispy-Chicken-Pepino.png",
+            "descripcion":"Un sabor único, crispy y agridulce, ready para disfrutar."
         },
         {
             "id": 14,
@@ -110,7 +123,8 @@
             "carne": "pollo",
             "tipo":"simple",
             "precio":7000,
-            "imgUrl":"../assets/img/hamburguesas/Crsipy-Chicken.png"
+            "imgUrl":"../assets/img/hamburguesas/Crsipy-Chicken.png",
+            "descripcion":"Pollo crispy, pan, tomate, lechuga, mayonesa, pepinos, ketchup, cebolla. Pensada para los fans del pollo."
         }
     ]
 }
