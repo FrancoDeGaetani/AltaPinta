@@ -35,7 +35,7 @@ Si quieres hechas un vistazo al proyecto, te recomiendo:
 ![Captura del proyecto](https://raw.githubusercontent.com/FrancoDeGaetani/AltaPinta/refs/heads/main/assets/img/git-hub/foto-github.png)
 
 ## Autor ✒️
-*Franco De Gaetani*
+**Franco De Gaetani**
 
 * [MiCorreo](francodegaetani@gmail.com)
 * [LinkedIn](https://www.linkedin.com/in/franco-de-gaetani-848a19371/)
